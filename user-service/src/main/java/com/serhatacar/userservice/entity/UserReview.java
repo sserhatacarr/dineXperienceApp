@@ -1,7 +1,6 @@
 package com.serhatacar.userservice.entity;
 
-import com.serhatacar.restaurantservice.entity.Restaurant;
-import com.serhatacar.userservice.common.BaseEntity;
+import com.serhatacar.userservice.common.base.BaseEntity;
 import com.serhatacar.userservice.entity.enums.Rate;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -33,9 +32,7 @@ public class UserReview extends BaseEntity {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @ManyToOne
-    @JoinColumn(name = "restaurant_id")
-    private Restaurant restaurant;
+
 
 
 }

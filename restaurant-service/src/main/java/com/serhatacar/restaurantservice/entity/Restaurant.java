@@ -42,8 +42,10 @@ public class Restaurant {
     @Column(name = "working_hours", length = 100)
     private String workingHours;
 
-    @Column(name = "location", length = 100, nullable = false)
-    /*private Location location;*/
+  /*  @Column(name = "location", length = 100, nullable = false)
+    private Location location;*/
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status", length = 30, nullable = false)
     private Status status;
 }

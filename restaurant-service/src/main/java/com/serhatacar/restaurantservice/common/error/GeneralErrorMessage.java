@@ -10,7 +10,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @Getter
 @ToString
-public enum GeneralErrorMessage implements BaseErrorMessage {
+public enum GeneralErrorMessage implements BaseErrorMessage{
 
     ITEM_NOT_FOUND("Item not found");
 

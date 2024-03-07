@@ -2,7 +2,7 @@ package com.serhatacar.userservice.entity;
 
 import com.serhatacar.userservice.entity.enums.Gender;
 import com.serhatacar.userservice.entity.enums.Status;
-import com.serhatacar.userservice.common.BaseEntity;
+import com.serhatacar.userservice.common.base.BaseEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

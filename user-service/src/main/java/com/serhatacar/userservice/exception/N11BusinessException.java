@@ -1,6 +1,6 @@
 package com.serhatacar.userservice.exception;
 
-import com.serhatacar.restaurantservice.common.error.BaseErrorMessage;
+import com.serhatacar.userservice.common.error.BaseErrorMessage;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;

@@ -8,6 +8,5 @@ import java.io.Serializable;
 
 public interface BaseErrorMessage {
 
-
     String getErrorMessage();
 }

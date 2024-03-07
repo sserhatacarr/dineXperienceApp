@@ -1,4 +1,4 @@
-package com.serhatacar.userservice.common;
+package com.serhatacar.userservice.common.base;
 
 /**
  * @author Serhat Acar

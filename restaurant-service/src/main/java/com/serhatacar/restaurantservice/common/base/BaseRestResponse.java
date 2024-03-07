@@ -1,4 +1,4 @@
-package com.serhatacar.userservice.common;
+package com.serhatacar.restaurantservice.common.base;
 
 import java.time.LocalDateTime;
 

@@ -1,4 +1,4 @@
-package com.serhatacar.userservice.service;
+package com.serhatacar.userservice.service.entityservice;
 
 import com.serhatacar.userservice.common.base.BaseAdditionalFields;
 import com.serhatacar.userservice.common.base.BaseEntity;

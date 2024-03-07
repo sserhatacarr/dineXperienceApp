@@ -1,6 +1,7 @@
-package com.serhatacar.userservice.exception;
+package com.serhatacar.userservice.exception.notfound;
 
 import com.serhatacar.userservice.common.error.BaseErrorMessage;
+import com.serhatacar.userservice.exception.N11BusinessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 

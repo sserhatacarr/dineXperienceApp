@@ -12,7 +12,10 @@ import lombok.ToString;
 @ToString
 public enum GeneralErrorMessage implements BaseErrorMessage{
 
-    ITEM_NOT_FOUND("Item not found");
+    ITEM_NOT_FOUND("Item not found"),
+    USER_NOT_FOUND("User not found"),
+    USER_NOT_ACTIVE("User not active"),
+    USER_REVIEW_NOT_FOUND("User review not found");
 
     private final String errorMessage;
 

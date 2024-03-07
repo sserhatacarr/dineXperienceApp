@@ -3,7 +3,7 @@ package com.serhatacar.userservice.service.entityservice;
 import com.serhatacar.userservice.common.base.BaseAdditionalFields;
 import com.serhatacar.userservice.common.base.BaseEntity;
 import com.serhatacar.userservice.common.error.GeneralErrorMessage;
-import com.serhatacar.userservice.exception.ItemNotFoundException;
+import com.serhatacar.userservice.exception.notfound.ItemNotFoundException;
 import lombok.Getter;
 import org.springframework.data.jpa.repository.JpaRepository;
 

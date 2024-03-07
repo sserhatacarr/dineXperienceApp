@@ -1,5 +1,6 @@
 package com.serhatacar.restaurantservice.entity;
 
+import com.serhatacar.restaurantservice.common.base.BaseEntity;
 import com.serhatacar.restaurantservice.entity.enums.Status;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -16,7 +17,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "restaurants")
-public class Restaurant {
+public class Restaurant extends BaseEntity {
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     private Long id;

@@ -22,6 +22,9 @@ public class UserReview extends BaseEntity {
     @GeneratedValue
     private Long id;
 
+    @Column (name="restaurant_id")
+    private Long restaurantId;
+
     @Column(name = "comment")
     private String comment;
 

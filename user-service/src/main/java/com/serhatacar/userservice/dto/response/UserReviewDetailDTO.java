@@ -1,4 +1,4 @@
-package com.serhatacar.userservice.dto;
+package com.serhatacar.userservice.dto.response;
 
 /**
  * @author Serhat Acar

@@ -1,4 +1,4 @@
-package com.serhatacar.restaurantservice.dto;
+package com.serhatacar.restaurantservice.dto.response;
 
 import com.serhatacar.restaurantservice.entity.enums.Status;
 
@@ -7,6 +7,7 @@ import com.serhatacar.restaurantservice.entity.enums.Status;
  */
 
 public record RestaurantDTO (
+                             Long id,
                              String name,
                              String address,
                              String phone,

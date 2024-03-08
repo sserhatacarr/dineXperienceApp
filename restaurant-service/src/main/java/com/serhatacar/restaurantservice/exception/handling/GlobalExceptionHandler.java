@@ -1,6 +1,6 @@
 package com.serhatacar.restaurantservice.exception.handling;
 
-import com.serhatacar.restaurantservice.common.base.BaseRestResponse;
+import com.serhatacar.restaurantservice.common.base.RestResponse;
 import com.serhatacar.restaurantservice.common.error.GeneralErrorMessageResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -20,7 +20,7 @@ public class GlobalExceptionHandler {
         String descipton = request.getDescription(false);
 
         var generalErrorMessages = new GeneralErrorMessageResponse(LocalDateTime.now(), message, descipton);
-        var restResponse = BaseRestResponse.error(generalErrorMessages, message);
+        var restResponse = RestResponse.error(generalErrorMessages, message);
 
         return ResponseEntity.badRequest().body(restResponse);
     }

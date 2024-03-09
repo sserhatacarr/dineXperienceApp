@@ -1,11 +1,15 @@
 package com.serhatacar.restaurantservice.common.base;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDateTime;
 
 /**
  * @author Serhat Acar
  */
-
+@Getter
+@Setter
 public class RestResponse<T> {
     private T data;
     private LocalDateTime responseDate;
@@ -27,7 +31,7 @@ public class RestResponse<T> {
         return new RestResponse<>(data, false, message);
     }
 
-    public static <T> RestResponse<T> empty() {
-        return new RestResponse<>(null, true, null);
+    public static <T> RestResponse<T> empty(String message) {
+        return new RestResponse<>(null, true, message);
     }
 }

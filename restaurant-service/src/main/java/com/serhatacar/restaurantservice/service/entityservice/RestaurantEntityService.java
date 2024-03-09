@@ -10,12 +10,13 @@ import org.springframework.stereotype.Service;
  * @author Serhat Acar
  */
 @Service
-public class RestaurantEntityService  extends BaseEntityService<Restaurant, RestaurantRepository>{
+public class RestaurantEntityService extends BaseEntityService<Restaurant, RestaurantRepository> {
 
     public RestaurantEntityService(RestaurantRepository repository) {
         super(repository);
     }
 
+    @Override
     public Restaurant findByIdWithControl(Long id) {
         return getRepository().findById(id).orElseThrow(() -> new ItemNotFoundException(GeneralErrorMessage.RESTAURANT_NOT_ACTIVE));
     }

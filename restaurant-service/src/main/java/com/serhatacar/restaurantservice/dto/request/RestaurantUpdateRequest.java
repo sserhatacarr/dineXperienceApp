@@ -15,5 +15,7 @@ public record RestaurantUpdateRequest(
                                                     String description,
                                                     String website,
                                                     String workingHours,
+                                                    double latitude,
+                                                    double longitude,
                                                     Status status) {
 }

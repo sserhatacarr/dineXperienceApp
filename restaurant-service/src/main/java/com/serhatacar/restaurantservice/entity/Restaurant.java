@@ -43,6 +43,12 @@ public class Restaurant extends BaseEntity {
     @Column(name = "working_hours", length = 100)
     private String workingHours;
 
+    @Column(name = "latitude", nullable = false)
+    private double latitude;
+
+    @Column(name = "longitude", nullable = false)
+    private double longitude;
+
   /*  @Column(name = "location", length = 100, nullable = false)
     private Location location;*/
 

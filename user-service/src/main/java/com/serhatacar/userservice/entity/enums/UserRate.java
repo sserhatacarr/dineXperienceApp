@@ -4,7 +4,7 @@ package com.serhatacar.userservice.entity.enums;
  * @author Serhat Acar
  */
 
-public enum Rate {
+public enum UserRate {
     ONE,
     TWO,
     THREE,

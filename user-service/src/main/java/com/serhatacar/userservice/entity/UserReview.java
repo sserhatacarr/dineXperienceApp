@@ -1,7 +1,7 @@
 package com.serhatacar.userservice.entity;
 
 import com.serhatacar.userservice.common.base.BaseEntity;
-import com.serhatacar.userservice.entity.enums.Rate;
+import com.serhatacar.userservice.entity.enums.UserRate;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -28,8 +28,8 @@ public class UserReview extends BaseEntity {
     @Column(name = "comment")
     private String comment;
 
-    @Column(name = "rate")
-    private Rate rate;
+    @Column(name = "user_rate")
+    private UserRate userRate;
 
     @ManyToOne
     @JoinColumn(name = "user_id")

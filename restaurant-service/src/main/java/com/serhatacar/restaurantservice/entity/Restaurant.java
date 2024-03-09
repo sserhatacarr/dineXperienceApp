@@ -1,6 +1,7 @@
 package com.serhatacar.restaurantservice.entity;
 
 import com.serhatacar.restaurantservice.common.base.BaseEntity;
+import com.serhatacar.restaurantservice.entity.enums.RestaurantRate;
 import com.serhatacar.restaurantservice.entity.enums.Status;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -48,6 +49,9 @@ public class Restaurant extends BaseEntity {
 
     @Column(name = "longitude", nullable = false)
     private double longitude;
+
+    @Column(name = "restaurant_rate", nullable = false)
+    private RestaurantRate restaurantRate;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status", length = 30, nullable = false)

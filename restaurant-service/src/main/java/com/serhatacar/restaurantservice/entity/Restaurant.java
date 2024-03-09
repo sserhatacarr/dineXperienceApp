@@ -49,9 +49,6 @@ public class Restaurant extends BaseEntity {
     @Column(name = "longitude", nullable = false)
     private double longitude;
 
-  /*  @Column(name = "location", length = 100, nullable = false)
-    private Location location;*/
-
     @Enumerated(EnumType.STRING)
     @Column(name = "status", length = 30, nullable = false)
     private Status status;

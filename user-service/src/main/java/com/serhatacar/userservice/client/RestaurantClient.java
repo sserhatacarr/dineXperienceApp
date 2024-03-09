@@ -1,7 +1,8 @@
 package com.serhatacar.userservice.client;
 
-import com.serhatacar.restaurantservice.common.base.RestResponse;
-import com.serhatacar.restaurantservice.dto.response.RestaurantDTO;
+
+import com.serhatacar.userservice.common.base.RestResponse;
+import com.serhatacar.userservice.dto.response.RestaurantDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

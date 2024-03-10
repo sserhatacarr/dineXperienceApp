@@ -1,5 +1,6 @@
 package com.serhatacar.restaurantservice.dto.response;
 
+import com.serhatacar.restaurantservice.entity.enums.RestaurantRate;
 import com.serhatacar.restaurantservice.entity.enums.Status;
 
 /**
@@ -15,6 +16,7 @@ public record RestaurantDTO (
                              String description,
                              String website,
                              String workingHours,
+                             RestaurantRate restaurantRate,
                              Status status
 
 ){

@@ -15,7 +15,7 @@ import java.util.List;
  * @author Serhat Acar
  */
 @RestController
-@RequestMapping("/api/v1/restaurant")
+@RequestMapping("/api/v1/restaurants")
 @RequiredArgsConstructor
 public class RestaurantController {
 

@@ -14,13 +14,15 @@ import java.util.List;
  * @author Serhat Acar
  */
 
-@FeignClient(name = "restaurant-service", url = "http://localhost:8080/api/v1")
+@FeignClient(name = "restaurant-service", url = "http://localhost:8080/api/v1/restaurants")
 public interface RestaurantClient {
 
-    @GetMapping("/restaurant")
+    @GetMapping()
     ResponseEntity<RestResponse<List<RestaurantDTO>>> getAllRestaurants();
 
-    @GetMapping ("/restaurant/{id)")
-    ResponseEntity<RestResponse<RestaurantDTO>> getRestaurantById(@PathVariable Long id);
+
+    @GetMapping ("/{id}")
+    ResponseEntity<RestResponse<RestaurantDTO>> getRestaurantById(@PathVariable(name="id") Long id);
+
 
 }

@@ -7,6 +7,7 @@ import com.serhatacar.userservice.dto.response.RestaurantDTO;
 import com.serhatacar.userservice.dto.response.UserReviewDetailDTO;
 import com.serhatacar.userservice.entity.User;
 import com.serhatacar.userservice.entity.UserReview;
+import com.serhatacar.userservice.mapper.UserReviewMapper;
 import com.serhatacar.userservice.service.UserReviewService;
 import com.serhatacar.userservice.service.entityservice.UserEntityService;
 import com.serhatacar.userservice.service.entityservice.UserReviewEntityService;
@@ -25,9 +26,14 @@ public class UserReviewServiceImpl implements UserReviewService {
     private final UserReviewEntityService userReviewEntityService;
     private final UserEntityService userEntityService;
     private final RestaurantClient restaurantClient;
+    private final UserReviewMapper userReviewMapper;
     @Override
     public UserReviewDetailDTO saveUserReview(UserReviewSaveRequest request) {
-    return null;
+           RestaurantDTO restaurantDTO = restaurantClient.getRestaurantById(request.restaurantId()).getBody().getData();
+            UserReview userReview = userReviewMapper.convertToUserReview(request);
+            userEntityService.findByIdWithControl(request.user().getId());
+           userReview = userReviewEntityService.save(userReview);
+              return userReviewMapper.toUserReviewDetail(userReview, restaurantDTO);
     }
 
     @Override

@@ -11,14 +11,10 @@ import lombok.Builder;
 
 public record UserReviewDetailDTO(
         Long id,
-        User userId,
+        User user,
         Long restaurantId,
         String restaurantName,
         String comment,
-        String userName,
-        String userSurname,
-        String userFullName,
-        UserRate userRate
+        UserRate userRate ){
 
-) {
 }

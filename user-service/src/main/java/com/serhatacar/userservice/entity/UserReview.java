@@ -31,7 +31,8 @@ public class UserReview extends BaseEntity {
 
 
     @JoinColumn(name = "user_id")
-    private Long userId;
+    @ManyToOne
+    private User user;
 
 
 

@@ -50,6 +50,7 @@ public class Restaurant extends BaseEntity {
     @Column(name = "longitude", nullable = false)
     private double longitude;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "restaurant_rate", nullable = false)
     private RestaurantRate restaurantRate;
 

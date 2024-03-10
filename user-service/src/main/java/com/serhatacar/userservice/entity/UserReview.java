@@ -3,14 +3,12 @@ package com.serhatacar.userservice.entity;
 import com.serhatacar.userservice.common.base.BaseEntity;
 import com.serhatacar.userservice.entity.enums.UserRate;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 /**
  * @author Serhat Acar
  */
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -31,9 +29,9 @@ public class UserReview extends BaseEntity {
     @Column(name = "user_rate")
     private UserRate userRate;
 
-    @ManyToOne
+
     @JoinColumn(name = "user_id")
-    private User user;
+    private Long userId;
 
 
 

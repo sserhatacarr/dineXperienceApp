@@ -17,7 +17,7 @@ import lombok.*;
 @Table(name = "user_reviews")
 public class UserReview extends BaseEntity {
     @Id
-    @GeneratedValue
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column (name="restaurant_id")
@@ -28,7 +28,6 @@ public class UserReview extends BaseEntity {
 
     @Column(name = "user_rate")
     private UserRate userRate;
-
 
     @JoinColumn(name = "user_id")
     @ManyToOne

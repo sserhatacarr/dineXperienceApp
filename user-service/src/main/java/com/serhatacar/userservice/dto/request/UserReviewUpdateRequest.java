@@ -12,6 +12,6 @@ public record UserReviewUpdateRequest(
                                                      Long restaurantId,
                                                      String comment,
                                                      UserRate userRate,
-                                                     User userId) {
+                                                     User user) {
 }
 

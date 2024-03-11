@@ -1,4 +1,4 @@
-package com.serhatacar.restaurantservice.exception.notactive;
+package com.serhatacar.restaurantservice.exception.notfound;
 
 import com.serhatacar.restaurantservice.common.error.BaseErrorMessage;
 import com.serhatacar.restaurantservice.exception.N11BusinessException;

@@ -21,7 +21,7 @@ import java.math.BigDecimal;
 @Table(name = "restaurants")
 public class Restaurant extends BaseEntity {
     @Id
-    @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "name", length = 50, nullable = false)

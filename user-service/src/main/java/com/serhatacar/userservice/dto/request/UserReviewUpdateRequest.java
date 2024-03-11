@@ -1,7 +1,8 @@
 package com.serhatacar.userservice.dto.request;
 
 import com.serhatacar.userservice.entity.User;
-import com.serhatacar.userservice.entity.enums.UserRate;
+
+import java.math.BigDecimal;
 
 /**
  * @author Serhat Acar
@@ -11,7 +12,7 @@ public record UserReviewUpdateRequest(
                                                      Long id,
                                                      Long restaurantId,
                                                      String comment,
-                                                     UserRate userRate,
+                                                     BigDecimal userRate,
                                                      User user) {
 }
 

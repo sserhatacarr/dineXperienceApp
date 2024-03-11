@@ -1,8 +1,9 @@
 package com.serhatacar.userservice.dto.response;
 
 import com.serhatacar.userservice.entity.User;
-import com.serhatacar.userservice.entity.enums.UserRate;
 import lombok.Builder;
+
+import java.math.BigDecimal;
 
 /**
  * @author Serhat Acar
@@ -15,6 +16,6 @@ public record UserReviewDetailDTO(
         Long restaurantId,
         String restaurantName,
         String comment,
-        UserRate userRate ){
+        BigDecimal userRate ){
 
 }

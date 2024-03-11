@@ -1,7 +1,8 @@
 package com.serhatacar.restaurantservice.dto.response;
 
-import com.serhatacar.restaurantservice.entity.enums.RestaurantRate;
 import com.serhatacar.restaurantservice.entity.enums.Status;
+
+import java.math.BigDecimal;
 
 /**
  * @author Serhat Acar
@@ -16,7 +17,7 @@ public record RestaurantDTO (
                              String description,
                              String website,
                              String workingHours,
-                             RestaurantRate restaurantRate,
+                             BigDecimal restaurantRate,
                              Status status
 
 ){

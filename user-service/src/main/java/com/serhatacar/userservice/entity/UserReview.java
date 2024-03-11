@@ -1,9 +1,10 @@
 package com.serhatacar.userservice.entity;
 
 import com.serhatacar.userservice.common.base.BaseEntity;
-import com.serhatacar.userservice.entity.enums.UserRate;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.math.BigDecimal;
 
 /**
  * @author Serhat Acar
@@ -17,23 +18,21 @@ import lombok.*;
 @Table(name = "user_reviews")
 public class UserReview extends BaseEntity {
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column (name="restaurant_id")
+    @Column(name = "restaurant_id")
     private Long restaurantId;
 
     @Column(name = "comment")
     private String comment;
 
     @Column(name = "user_rate")
-    private UserRate userRate;
+    private BigDecimal userRate;
 
     @JoinColumn(name = "user_id")
     @ManyToOne
     private User user;
-
-
 
 
 }

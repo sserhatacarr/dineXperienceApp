@@ -17,9 +17,9 @@ public interface UserReviewService {
 
     List<UserReviewDetailDTO> getAllUserReviews();
 
-    List<UserReviewDetailDTO> getUserReviewsByUserId();
+    List<UserReviewDetailDTO> getUserReviewsByUserId(Long userId);
 
-    UserReviewDetailDTO getUserReviewsByRestaurantId(Long restaurantId);
+    List<UserReviewDetailDTO> getUserReviewsByRestaurantId(Long restaurantId);
 
     UserReviewDetailDTO editUserReview(UserReviewUpdateRequest request);
 }

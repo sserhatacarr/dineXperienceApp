@@ -1,7 +1,7 @@
 package com.serhatacar.userservice.exception.handling;
 
 import com.serhatacar.userservice.common.base.RestResponse;
-import com.serhatacar.userservice.common.error.GeneralErrorMessageResponse;
+import com.serhatacar.userservice.common.error.GeneralErrorResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -20,7 +20,7 @@ public class GlobalExceptionHandler {
         String message = ex.getMessage();
         String description = request.getDescription(false);
 
-        var generalErrorMessages = new GeneralErrorMessageResponse(LocalDateTime.now(), message, description);
+        var generalErrorMessages = new GeneralErrorResponse(LocalDateTime.now(), message, description);
         var restResponse = RestResponse.error(generalErrorMessages, message);
 
         return ResponseEntity.badRequest().body(restResponse);

@@ -58,7 +58,6 @@ public class UserReviewServiceImpl implements UserReviewService {
 
         List<UserReview> userReviews = userReviewEntityService.findByUserId(userId);
         List <RestaurantDTO> restaurantDTOs = restaurantClient.getAllRestaurants().getBody().getData();
-        // TODO: Burada komle  restaurantları çekmek ne kadar mantıklı ? Sercana sor.
         return userReviewMapper.toUserReviewDetailList(userReviews, restaurantDTOs);
 
     }
@@ -79,5 +78,11 @@ public class UserReviewServiceImpl implements UserReviewService {
             userReview = userReviewEntityService.save(userReview);
             RestaurantDTO restaurantDTO = restaurantClient.getRestaurantById(userReview.getRestaurantId()).getBody().getData();
             return userReviewMapper.toUserReviewDetail(userReview, restaurantDTO);
+    }
+
+    @Override
+    public void deleteUserReview(Long id) {
+        UserReview userReview = userReviewEntityService.findByIdWithControl(id);
+        userReviewEntityService.deleteById(id);
     }
 }

@@ -58,4 +58,10 @@ public class UserReviewController {
         return new ResponseEntity<>(RestResponse.of(userReviewDetailDTO, "User review updated successfully"), HttpStatus.OK);
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<RestResponse<String>> deleteUserReview(@PathVariable Long id) {
+        userReviewService.deleteUserReview(id);
+        return new ResponseEntity<>(RestResponse.empty("User review deleted successfully"), HttpStatus.OK);
+    }
+
 }

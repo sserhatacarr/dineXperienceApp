@@ -22,4 +22,6 @@ public interface UserReviewService {
     List<UserReviewDetailDTO> getUserReviewsByRestaurantId(Long restaurantId);
 
     UserReviewDetailDTO editUserReview(UserReviewUpdateRequest request);
+
+    void deleteUserReview(Long id);
 }

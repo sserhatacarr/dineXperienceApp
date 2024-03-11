@@ -44,7 +44,6 @@ public class UserController {
             @ApiResponse(responseCode = "404", description = "Not Found<br>-User not found"),
             @ApiResponse(responseCode = "500", description = "Internal Server Error")
     })
-
     @GetMapping("/{id}")
     public ResponseEntity<RestResponse<UserDTO>> getUserById(@PathVariable Long id) {
         UserDTO userDTO = userService.getUserById(id);
@@ -58,7 +57,6 @@ public class UserController {
             @ApiResponse(responseCode = "401", description = "Unauthorized<br>-Token invalid (wrong or expired token)"),
             @ApiResponse(responseCode = "500", description = "Internal Server Error")
     })
-
     @PostMapping
     public ResponseEntity<RestResponse<UserDTO>> saveUser(@RequestBody UserSaveRequest user) {
         UserDTO userDTO = userService.saveUser(user);
@@ -72,7 +70,6 @@ public class UserController {
             @ApiResponse(responseCode = "404", description = "Not Found<br>-User not found"),
             @ApiResponse(responseCode = "500", description = "Internal Server Error")
     })
-
     @PutMapping("/{debugId}")
     public ResponseEntity<RestResponse<UserDTO>> updateUser(@PathVariable Long debugId, @RequestBody UserUpdateRequest user) {
         UserDTO userDTO = userService.updateUser(user);
@@ -86,7 +83,6 @@ public class UserController {
             @ApiResponse(responseCode = "404", description = "Not Found<br>-User not found"),
             @ApiResponse(responseCode = "500", description = "Internal Server Error")
     })
-
     @DeleteMapping("/{id}")
     public ResponseEntity<RestResponse<UserDTO>> deleteUser(@PathVariable Long id) {
         userService.deleteUser(id);

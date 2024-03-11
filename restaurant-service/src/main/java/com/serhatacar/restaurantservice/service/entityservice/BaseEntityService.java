@@ -3,7 +3,7 @@ package com.serhatacar.restaurantservice.service.entityservice;
 import com.serhatacar.restaurantservice.common.base.BaseAdditionalFields;
 import com.serhatacar.restaurantservice.common.base.BaseEntity;
 import com.serhatacar.restaurantservice.common.error.GeneralErrorMessage;
-import com.serhatacar.restaurantservice.exception.notactive.ItemNotFoundException;
+import com.serhatacar.restaurantservice.exception.notfound.ItemNotFoundException;
 import lombok.Getter;
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
 /**
  * @author Serhat Acar
  */
@@ -23,7 +21,7 @@ public class RecommendationController {
     private final RecommendationService recommendationService;
 
     @GetMapping("/{userId}")
-    public ResponseEntity<RestResponse<List<RecommendationDTO>>>getRecommendationByUserId(@PathVariable Long userId) {
+    public ResponseEntity<RestResponse<RecommendationDTO>> getRecommendationByUserId(@PathVariable Long userId) {
         return ResponseEntity.ok(RestResponse.of(recommendationService.getRecommendationByUserId(userId), "Recommendation is fetched successfully"));
     }
 }

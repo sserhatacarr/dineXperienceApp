@@ -12,9 +12,9 @@ public interface RecommendationService {
 
     RecommendationDTO getRecommendation(Long id);
 
-   List<RecommendationDTO>  getRecommendationByUserId(Long userId);
+    RecommendationDTO getRecommendationByUserId(Long userId);
 
-    List <RecommendationDTO> getAllRecommendations();
+    List<RecommendationDTO> getAllRecommendations();
 
     void deleteRecommendation(Long id);
 

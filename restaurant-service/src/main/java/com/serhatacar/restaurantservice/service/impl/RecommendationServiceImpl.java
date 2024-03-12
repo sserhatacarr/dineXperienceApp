@@ -3,20 +3,17 @@ package com.serhatacar.restaurantservice.service.impl;
 import com.serhatacar.restaurantservice.client.UserClient;
 import com.serhatacar.restaurantservice.common.base.RestResponse;
 import com.serhatacar.restaurantservice.dto.response.RecommendationDTO;
-import com.serhatacar.restaurantservice.dto.response.RestaurantDTO;
+import com.serhatacar.restaurantservice.dto.response.RestaurantWithScoreDTO;
 import com.serhatacar.restaurantservice.dto.response.UserDTO;
 import com.serhatacar.restaurantservice.engine.RecommendationEngine;
-import com.serhatacar.restaurantservice.entity.Recommendation;
 import com.serhatacar.restaurantservice.entity.Restaurant;
 import com.serhatacar.restaurantservice.service.RecommendationService;
-import com.serhatacar.restaurantservice.service.entityservice.RecommendationEntityService;
 import com.serhatacar.restaurantservice.service.entityservice.RestaurantEntityService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * @author Serhat Acar
@@ -25,7 +22,6 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class RecommendationServiceImpl implements RecommendationService {
 
-    private final RecommendationEntityService recommendationEntityService;
     private final RestaurantEntityService restaurantEntityService;
     private final UserClient userClient;
 
@@ -35,7 +31,7 @@ public class RecommendationServiceImpl implements RecommendationService {
     }
 
     @Override
-    public List<RecommendationDTO> getRecommendationByUserId(Long userId) {
+    public RecommendationDTO getRecommendationByUserId(Long userId) {
         // Get user information
         ResponseEntity<RestResponse<UserDTO>> response = userClient.getUserById(userId);
         UserDTO user = response.getBody().getData();
@@ -48,18 +44,12 @@ public class RecommendationServiceImpl implements RecommendationService {
         List<Restaurant> restaurants = restaurantEntityService.getAllRestaurants();
 
         // Get recommendations
-        List<Recommendation> recommendations = RecommendationEngine.getRecommendations(userLat, userLon, restaurants);
+        List<RestaurantWithScoreDTO> recommendations = RecommendationEngine.getRecommendations(userLat, userLon, restaurants);
 
         // Convert Recommendation list to RecommendationDTO list
-        List<RecommendationDTO> recommendationDTOs = recommendations.stream()
-                .map(recommendation -> new RecommendationDTO(
-                        recommendation.getId(),
-                        user.id(),
-                        recommendation.getRestaurant().getId()))
+        RecommendationDTO recommendationDTO = new RecommendationDTO(user, recommendations);
 
-                .collect(Collectors.toList());
-
-        return recommendationDTOs;
+        return recommendationDTO;
     }
 
     @Override

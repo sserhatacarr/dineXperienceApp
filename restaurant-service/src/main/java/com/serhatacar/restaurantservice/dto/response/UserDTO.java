@@ -1,8 +1,5 @@
 package com.serhatacar.restaurantservice.dto.response;
 
-
-import java.time.LocalDate;
-
 /**
  * @author Serhat Acar
  */

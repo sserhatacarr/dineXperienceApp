@@ -5,7 +5,7 @@ package com.serhatacar.restaurantservice.util;
  */
 
 public class RecommendationUtils {
-    public static double distance(double lat1, double lon1, double lat2, double lon2) {
+    public static double calculateDistance(double lat1, double lon1, double lat2, double lon2) {
     final int R = 6371; // Dünya'nın yarıçapı kilometre cinsinden
 
     // Enlem ve boylamların radyan cinsinden farkları

@@ -20,7 +20,11 @@ public class RecommendationEngine {
         for (Restaurant restaurant : restaurants) {
             double restaurantLat = restaurant.getLatitude();
             double restaurantLon = restaurant.getLongitude();
-            double distance = RecommendationUtils.distance(userLat, userLon, restaurantLat, restaurantLon);
+            double distance = RecommendationUtils.calculateDistance(userLat, userLon, restaurantLat, restaurantLon);
+            if (distance > 10) {
+                continue;
+            } // burada şimdilik böyle bir if konuldu aslında sorgu ile sadece
+            System.out.println("Distance: " + distance);
 
             Recommendation recommendation = new Recommendation();
             recommendation.setRestaurant(restaurant);

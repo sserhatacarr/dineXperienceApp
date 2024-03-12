@@ -1,6 +1,6 @@
 package com.serhatacar.restaurantservice.dto.response;
 
-import java.util.List;
+
 
 /**
  * @author Serhat Acar
@@ -9,5 +9,5 @@ import java.util.List;
 public record RecommendationDTO(
                                             Long id,
                                             Long userId,
-                                            List<RestaurantDTO> restaurants) {
+                                           Long restaurantId) {
 }

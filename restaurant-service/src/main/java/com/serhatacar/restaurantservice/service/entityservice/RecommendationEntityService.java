@@ -8,11 +8,12 @@ import org.springframework.stereotype.Service;
  * @author Serhat Acar
  */
 @Service
-public class RecommendationEntityService extends BaseEntityService<Recommendation, RecommendationRepository>{
+public class RecommendationEntityService extends BaseEntityService<Recommendation, RecommendationRepository> {
     protected RecommendationEntityService(RecommendationRepository repository) {
         super(repository);
     }
 
+    @Override
     public Recommendation findByIdWithControl(Long id) {
         return getRepository().findById(id).orElse(null);
     }

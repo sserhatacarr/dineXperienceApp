@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  * @author Serhat Acar
  */
 
-@FeignClient (name = "user-service", url = "http://localhost:8081/api/v1/user")
+@FeignClient (name = "user-service", url = "http://localhost:8081/api/v1/users")
 public interface UserClient {
 
     @GetMapping("{id}")

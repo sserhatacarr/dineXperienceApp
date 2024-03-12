@@ -21,9 +21,9 @@ public class RecommendationEngine {
             double restaurantLat = restaurant.getLatitude();
             double restaurantLon = restaurant.getLongitude();
             double distance = RecommendationUtils.calculateDistance(userLat, userLon, restaurantLat, restaurantLon);
-            if (distance > 10) {
+     /*       if (distance > 10) {
                 continue;
-            } // burada şimdilik böyle bir if konuldu aslında sorgu ile sadece
+            }*/
             System.out.println("Distance: " + distance);
 
             Recommendation recommendation = new Recommendation();
@@ -32,7 +32,6 @@ public class RecommendationEngine {
             recommendations.add(recommendation);
         }
 
-        // En yüksek puanı alan 3 restoranı sıralayın.
         Collections.sort(recommendations, (r1, r2) -> Double.compare(r2.getScore(), r1.getScore()));
         return recommendations.subList(0, 3);
     }

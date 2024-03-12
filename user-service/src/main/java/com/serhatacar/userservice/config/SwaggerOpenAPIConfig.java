@@ -26,7 +26,7 @@ import io.swagger.v3.oas.annotations.servers.Server;
                 description = "Source code on GitHub",
                 url = "https://www.github.com/sserhatacarr/dineExperienceApp"
         ),
-        servers = {@Server(description = "user-service", url = "https://localhost:8081")}
+        servers = {@Server(description = "user-service", url = "http://localhost:8081")}
 
 )
 @SecurityScheme(

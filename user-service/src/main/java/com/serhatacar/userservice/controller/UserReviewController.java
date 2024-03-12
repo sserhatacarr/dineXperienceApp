@@ -20,7 +20,7 @@ import java.util.List;
  * @author Serhat Acar
  */
 @RestController
-@RequestMapping("/api/v1/user-reviews")
+@RequestMapping("/api/v1/users/reviews")
 @RequiredArgsConstructor
 public class UserReviewController {
     private final UserReviewService userReviewService;

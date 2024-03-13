@@ -8,20 +8,21 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 123
     ports:
-      - 5432:5432
+      - 5433:5433
     volumes:
       - db_data:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
 
   solr:
     image: solr
+    build: .
     ports:
       - "8983:8983"
     volumes:
       - data:/var/solr
     command:
       - solr-precreate
-      - gettingstarted
+      - restaurants
 
   zipkin:
     image: openzipkin/zipkin

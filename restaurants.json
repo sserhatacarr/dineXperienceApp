@@ -1,0 +1,101 @@
+{
+  "responseHeader":{
+    "status":0,
+    "QTime":0,
+    "params":{
+      "q":"*:*",
+      "wt":"json"
+    }
+  },
+  "response":{
+    "numFound":19,
+    "start":0,
+    "numFoundExact":true,
+    "docs":[{
+      "id":"1",
+      "name":["Test Restaurant 1"],
+      "address":["Test Address 1"],
+      "phone":["1234567890"],
+      "email":["test1@test.com"],
+      "description":["Test Description"],
+      "website":["www.testrestaurant1.com"],
+      "workingHours":["09:00-18:00"],
+      "latitude":[40.712776],
+      "longitude":[-74.005974],
+      "restaurantRate":[1.0],
+      "status":["ACTIVE"],
+      "_version_":1793447906834907136
+    },{
+      "id":"2883f4c0-7f6b-440e-a9ba-e3a3ff56c3e2",
+      "_version_":1793447906834907136
+    },{
+      "id":"2",
+      "name":["Test Restaurant 2"],
+      "address":["Test Address 2"],
+      "phone":["9876543210"],
+      "email":["test2@test.com"],
+      "description":["Another Test Description"],
+      "website":["www.testrestaurant2.com"],
+      "workingHours":["10:00-20:00"],
+      "latitude":[41.878113],
+      "longitude":[-87.629799],
+      "restaurantRate":[2.0],
+      "status":["ACTIVE"],
+      "_version_":1793447906841198592
+    },{
+      "id":"90cf2f81-7ae5-4ad9-b1c0-a37f3540b22d",
+      "_version_":1793447906841198592
+    },{
+      "id":"3",
+      "name":["Test Restaurant 3"],
+      "address":["Test Address 3"],
+      "phone":["5555555555"],
+      "email":["test3@test.com"],
+      "description":["Yet Another Test Description"],
+      "website":["www.testrestaurant3.com"],
+      "workingHours":["08:00-17:00"],
+      "latitude":[34.052235],
+      "longitude":[-118.243683],
+      "restaurantRate":[3.0],
+      "status":["ACTIVE"],
+      "_version_":1793447906842247168
+    },{
+      "id":"41c95257-2531-48bb-a148-c14cc9750ca9",
+      "_version_":1793447906842247168
+    },{
+      "id":"4",
+      "name":["Test Restaurant 4"],
+      "address":["Test Address 4"],
+      "phone":["1231231234"],
+      "email":["test4@test.com"],
+      "description":["Description for Test Restaurant 4"],
+      "website":["www.testrestaurant4.com"],
+      "workingHours":["11:00-22:00"],
+      "latitude":[37.774929],
+      "longitude":[-122.419416],
+      "restaurantRate":[4.0],
+      "status":["ACTIVE"],
+      "_version_":1793448000759005184
+    },{
+      "id":"d899071b-a387-4815-9960-c11a4f515863",
+      "_version_":1793448000759005184
+    },{
+      "id":"5",
+      "name":["Test Restaurant 5"],
+      "address":["Test Address 5"],
+      "phone":["9876543210"],
+      "email":["test5@test.com"],
+      "description":["Description for Test Restaurant 5"],
+      "website":["www.testrestaurant5.com"],
+      "workingHours":["09:00-18:00"],
+      "latitude":[40.712776],
+      "longitude":[-74.005974],
+      "restaurantRate":[2.0],
+      "status":["ACTIVE"],
+      "_version_":1793448000760053760
+    },{
+      "id":"17ecbd15-7e1c-46a8-80cc-e526dcff3a87",
+      "_version_":1793448000760053760
+    }]
+  }
+}

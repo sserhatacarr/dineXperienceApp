@@ -1,7 +1,18 @@
 version: '3.1'
 
 services:
-  db:
+  solr:
+    image: solr:latest
+    container_name: solr
+    ports:
+      - "8983:8983"
+    volumes:
+      - ./data:/var/solr:rw
+    command:
+      - solr-precreate
+      - solr_restaurants
+
+  postgres_db:
     image: postgres
     container_name: postgres_db
     environment:
@@ -12,7 +23,7 @@ services:
     volumes:
       - db_data:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
-      
+
   zipkin:
     image: openzipkin/zipkin
     container_name: zipkin

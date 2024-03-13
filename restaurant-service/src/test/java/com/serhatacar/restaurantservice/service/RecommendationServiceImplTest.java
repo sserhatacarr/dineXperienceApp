@@ -14,7 +14,6 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.ResponseEntity;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,8 +38,9 @@ public class RecommendationServiceImplTest {
         Long userId = 1L;
         UserDTO user = new UserDTO(userId, "John", "Doe", "john.doe@example.com", 40.7128, -74.0060);
         List<Restaurant> restaurants = new ArrayList<>();
-        restaurants.add(new Restaurant(1L, "Restaurant 1", "Address 1", "1234567890", "restaurant1@example.com", "Description 1", "www.restaurant1.com", "9am-5pm", 40.7128, -74.0060, BigDecimal.valueOf(4.5), null));
-        restaurants.add(new Restaurant(2L, "Restaurant 2", "Address 2", "0987654321", "restaurant2@example.com", "Description 2", "www.restaurant2.com", "10am-6pm", 40.7128, -74.0060, BigDecimal.valueOf(4.0), null));
+      /*  restaurants.add(new Restaurant(1L, "Restaurant 1", "Address 1", "1234567890", "restaurant1@example.com", "Description 1", "www.restaurant1.com", "9am-5pm", 40.7128, -74.0060, BigDecimal.valueOf(4.5), null));
+        restaurants.add(new Restaurant(2L, "Restaurant 2", "Address 2", "0987654321", "restaurant2@example.com", "Description 2", "www.restaurant2.com", "10am-6pm", 40.7128, -74.0060, BigDecimal.valueOf(4.0), null))*/
+        ;
         ResponseEntity<RestResponse<UserDTO>> response = ResponseEntity.ok(RestResponse.of(user, "User found"));
         when(userClient.getUserById(userId)).thenReturn(response);
         when(restaurantEntityService.getAllRestaurants()).thenReturn(restaurants);

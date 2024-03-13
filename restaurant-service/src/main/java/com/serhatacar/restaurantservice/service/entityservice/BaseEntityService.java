@@ -1,14 +1,10 @@
 package com.serhatacar.restaurantservice.service.entityservice;
 
-import com.serhatacar.restaurantservice.common.base.BaseAdditionalFields;
-import com.serhatacar.restaurantservice.common.base.BaseEntity;
 import com.serhatacar.restaurantservice.common.error.GeneralErrorMessage;
 import com.serhatacar.restaurantservice.exception.notfound.ItemNotFoundException;
 import lombok.Getter;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.solr.repository.SolrCrudRepository;
 
-import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Optional;
 
 /**
@@ -16,7 +12,7 @@ import java.util.Optional;
  */
 
 @Getter
-public abstract class BaseEntityService<E extends BaseEntity, R extends JpaRepository<E, Long>> {
+public abstract class BaseEntityService<E, R extends SolrCrudRepository<E, Long>> {
 
     private final R repository;
 
@@ -26,25 +22,11 @@ public abstract class BaseEntityService<E extends BaseEntity, R extends JpaRepos
 
     public E save(E entity) {
 
-        BaseAdditionalFields baseAdditionalFields = entity.getBaseAdditionalFields();
-        if (baseAdditionalFields == null) {
-            baseAdditionalFields = new BaseAdditionalFields();
-        }
-
-        LocalDateTime now = LocalDateTime.now();
-        if (entity.getId() == null) {
-            baseAdditionalFields.setCreatedAt(now);
-        }
-
-        baseAdditionalFields.setUpdatedAt(now);
-
-        entity.setBaseAdditionalFields(baseAdditionalFields);
-
         entity = repository.save(entity);
         return entity;
     }
 
-    public List<E> findAll() {
+    public Iterable<E> findAll() {
         return repository.findAll();
     }
 

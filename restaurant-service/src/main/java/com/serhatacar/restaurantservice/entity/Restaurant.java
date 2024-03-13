@@ -1,14 +1,19 @@
 package com.serhatacar.restaurantservice.entity;
 
-import com.serhatacar.restaurantservice.common.base.BaseEntity;
 import com.serhatacar.restaurantservice.entity.enums.Status;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import nonapi.io.github.classgraph.json.Id;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.solr.core.mapping.Indexed;
+import org.springframework.data.solr.core.mapping.SolrDocument;
 
-import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 /**
  * @author Serhat Acar
@@ -17,44 +22,60 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @Getter
 @Setter
-@Entity
-@Table(name = "restaurants")
-public class Restaurant extends BaseEntity {
+@SolrDocument(solrCoreName = "restaurant  ")
+public class Restaurant {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Indexed(name = "id", type = "plong")
     private Long id;
 
-    @Column(name = "name", length = 50, nullable = false)
+    @Indexed(name = "name", type = "string")
     private String name;
 
-    @Column(name = "address", length = 200, nullable = false)
+    @Indexed(name = "address", type = "string")
     private String address;
 
-    @Column(name = "phone", length = 20, nullable = false)
+    @Indexed(name = "phone", type = "string")
     private String phone;
 
-    @Column(name = "email", length = 100)
+    @Indexed(name = "email", type = "string")
     private String email;
 
-    @Column(name = "website", length = 100)
+    @Indexed(name = "website", type = "string")
     private String website;
 
-    @Column(name = "description", length = 500)
+    @Indexed(name = "description", type = "string")
     private String description;
 
-    @Column(name = "working_hours", length = 100)
+    @Indexed(name = "workingHours", type = "string")
     private String workingHours;
 
-    @Column(name = "latitude", nullable = false)
+    @Indexed(name = "latitude", type = "pdouble")
     private double latitude;
 
-    @Column(name = "longitude", nullable = false)
+    @Indexed(name = "longitude", type = "pdouble")
     private double longitude;
 
-    @Column(name = "restaurant_rate", nullable = false)
-    private BigDecimal restaurantRate;
+    @Indexed(name = "restaurantRate", type = "pdouble")
+    private Double restaurantRate;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "status", length = 30, nullable = false)
+    @Indexed(name = "status", type = "string")
     private Status status;
+
+    @Indexed(name = "createdAt", type = "pdate")
+    @CreatedDate
+    private LocalDateTime createdAt;
+
+    @Indexed(name = "updatedAt", type = "pdate")
+    @LastModifiedDate
+    private LocalDateTime updatedAt;
+
+    @Indexed(name = "creatorId", type = "plong")
+    @CreatedBy
+    private Long creatorId;
+
+    @Indexed(name = "updatedId", type = "plong")
+    @LastModifiedBy
+    private Long updatedId;
+
 }

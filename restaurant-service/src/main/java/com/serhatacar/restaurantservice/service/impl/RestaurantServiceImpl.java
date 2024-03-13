@@ -10,8 +10,6 @@ import com.serhatacar.restaurantservice.service.entityservice.RestaurantEntitySe
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 /**
  * @author Serhat Acar
  */
@@ -25,11 +23,11 @@ public class RestaurantServiceImpl implements RestaurantService {
 
     @Override
     public RestaurantDTO saveRestaurant(RestaurantSaveRequest request) {
-    return restaurantMapper.convertToRestaurantDTO(restaurantEntityService.save(restaurantMapper.convertToRestaurant(request)));
+        return restaurantMapper.convertToRestaurantDTO(restaurantEntityService.save(restaurantMapper.convertToRestaurant(request)));
     }
 
     @Override
-    public List<RestaurantDTO> getAllRestaurants() {
+    public Iterable<RestaurantDTO> getAllRestaurants() {
         return restaurantMapper.convertToRestaurantDTOList(restaurantEntityService.findAll());
     }
 
@@ -40,7 +38,7 @@ public class RestaurantServiceImpl implements RestaurantService {
 
     @Override
     public RestaurantDTO updateRestaurant(RestaurantUpdateRequest request) {
-     Restaurant restaurant = restaurantEntityService.findByIdWithControl(request.id());
+        Restaurant restaurant = restaurantEntityService.findByIdWithControl(request.id());
         restaurantMapper.updateRestaurantFields(restaurant, request);
         restaurantEntityService.save(restaurant);
         return restaurantMapper.convertToRestaurantDTO(restaurant);

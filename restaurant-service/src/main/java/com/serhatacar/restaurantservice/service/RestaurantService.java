@@ -4,8 +4,6 @@ import com.serhatacar.restaurantservice.dto.request.RestaurantSaveRequest;
 import com.serhatacar.restaurantservice.dto.request.RestaurantUpdateRequest;
 import com.serhatacar.restaurantservice.dto.response.RestaurantDTO;
 
-import java.util.List;
-
 /**
  * @author Serhat Acar
  */
@@ -13,7 +11,7 @@ import java.util.List;
 public interface RestaurantService {
     RestaurantDTO saveRestaurant(RestaurantSaveRequest request);
 
-    List<RestaurantDTO> getAllRestaurants();
+    Iterable<RestaurantDTO> getAllRestaurants();
 
     RestaurantDTO getRestaurantById(Long id);
 

@@ -9,7 +9,7 @@ import java.util.List;
 
 public class RecommendationEngine {
 
-    public static List<RestaurantWithScoreDTO> getRecommendations(double userLat, double userLon, List<Restaurant> restaurants) {
+    public static List<RestaurantWithScoreDTO> getRecommendations(double userLat, double userLon, Iterable<Restaurant> restaurants) {
         List<RestaurantWithScoreDTO> recommendations = new ArrayList<>();
 
         for (Restaurant restaurant : restaurants) {

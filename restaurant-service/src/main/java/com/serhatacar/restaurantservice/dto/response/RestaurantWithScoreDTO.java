@@ -7,7 +7,7 @@ import com.serhatacar.restaurantservice.entity.enums.Status;
  */
 
 public record RestaurantWithScoreDTO(
-        Long id,
+        String id,
         String name,
         String address,
         String phone,

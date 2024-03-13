@@ -23,7 +23,10 @@ public class RestaurantServiceImpl implements RestaurantService {
 
     @Override
     public RestaurantDTO saveRestaurant(RestaurantSaveRequest request) {
-        return restaurantMapper.convertToRestaurantDTO(restaurantEntityService.save(restaurantMapper.convertToRestaurant(request)));
+
+        Restaurant restaurant = restaurantMapper.convertToRestaurant(request);
+        restaurantEntityService.save(restaurant);
+        return restaurantMapper.convertToRestaurantDTO(restaurant);
     }
 
     @Override
@@ -32,7 +35,7 @@ public class RestaurantServiceImpl implements RestaurantService {
     }
 
     @Override
-    public RestaurantDTO getRestaurantById(Long id) {
+    public RestaurantDTO getRestaurantById(String id) {
         return restaurantMapper.convertToRestaurantDTO(restaurantEntityService.findByIdWithControl(id));
     }
 
@@ -45,7 +48,7 @@ public class RestaurantServiceImpl implements RestaurantService {
     }
 
     @Override
-    public void deleteRestaurant(Long id) {
+    public void deleteRestaurant(String id) {
         Restaurant restaurant = restaurantEntityService.findByIdWithControl(id);
         restaurantEntityService.delete(restaurant);
 

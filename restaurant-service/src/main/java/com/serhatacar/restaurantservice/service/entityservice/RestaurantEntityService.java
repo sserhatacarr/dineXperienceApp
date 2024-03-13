@@ -17,7 +17,7 @@ public class RestaurantEntityService extends BaseEntityService<Restaurant, Resta
     }
 
     @Override
-    public Restaurant findByIdWithControl(Long id) {
+    public Restaurant findByIdWithControl(String id) {
         return getRepository().findById(id).orElseThrow(() -> new ItemNotFoundException(GeneralErrorMessage.RESTAURANT_NOT_FOUND));
     }
 

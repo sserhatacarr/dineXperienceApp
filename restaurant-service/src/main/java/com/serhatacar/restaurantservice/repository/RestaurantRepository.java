@@ -7,5 +7,5 @@ import org.springframework.data.solr.repository.SolrCrudRepository;
  * @author Serhat Acar
  */
 
-public interface RestaurantRepository extends SolrCrudRepository<Restaurant, Long> {
+public interface RestaurantRepository extends SolrCrudRepository<Restaurant, String> {
 }

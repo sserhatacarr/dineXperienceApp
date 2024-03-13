@@ -1,8 +1,16 @@
 package com.serhatacar.restaurantservice.controller;
 
+import com.serhatacar.restaurantservice.common.base.RestResponse;
+import com.serhatacar.restaurantservice.dto.request.RestaurantSaveRequest;
+import com.serhatacar.restaurantservice.dto.request.RestaurantUpdateRequest;
+import com.serhatacar.restaurantservice.dto.response.RestaurantDTO;
+import com.serhatacar.restaurantservice.service.RestaurantService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author Serhat Acar
@@ -12,9 +20,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class RestaurantController {
 
-    /*private final RestaurantService restaurantService;
+    private final RestaurantService restaurantService;
 
-     *//* @Operation(summary = "GET request for all restaurants", description = "Returns all restaurants in database<br>Accessible to admin users only.")
+     @Operation(summary = "GET request for all restaurants", description = "Returns all restaurants in database<br>Accessible to admin users only.")
      @ApiResponses(value = {
              @ApiResponse(responseCode = "200", description = "Success"),
              @ApiResponse(responseCode = "500", description = "Internal Server Error")
@@ -29,9 +37,9 @@ public class RestaurantController {
              @ApiResponse(responseCode = "200", description = "Success"),
              @ApiResponse(responseCode = "404", description = "Not Found<br>-Restaurant not found"),
              @ApiResponse(responseCode = "500", description = "Internal Server Error")
-     })*//*
+     })
     @GetMapping("/{id}")
-    public ResponseEntity<RestResponse<RestaurantDTO>> getRestaurantById(@PathVariable Long id) {
+    public ResponseEntity<RestResponse<RestaurantDTO>> getRestaurantById(@PathVariable String id) {
         return ResponseEntity.ok(RestResponse.of(restaurantService.getRestaurantById(id), "Restaurant is fetched successfully"));
     }
 
@@ -64,8 +72,8 @@ public class RestaurantController {
             @ApiResponse(responseCode = "500", description = "Internal Server Error")
     })
     @DeleteMapping("/{id}")
-    public ResponseEntity<RestResponse<Void>> deleteRestaurant(@PathVariable Long id) {
+    public ResponseEntity<RestResponse<Void>> deleteRestaurant(@PathVariable String id) {
         restaurantService.deleteRestaurant(id);
         return ResponseEntity.ok(RestResponse.empty("Restaurant is deleted successfully"));
-    }*/
+    }
 }

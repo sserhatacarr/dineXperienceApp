@@ -12,7 +12,7 @@ import java.util.Optional;
  */
 
 @Getter
-public abstract class BaseEntityService<E, R extends SolrCrudRepository<E, Long>> {
+public abstract class BaseEntityService<E, R extends SolrCrudRepository<E, String>> {
 
     private final R repository;
 
@@ -30,11 +30,11 @@ public abstract class BaseEntityService<E, R extends SolrCrudRepository<E, Long>
         return repository.findAll();
     }
 
-    public Optional<E> findById(Long id) {
+    public Optional<E> findById(String id) {
         return repository.findById(id);
     }
 
-    public E findByIdWithControl(Long id) {
+    public E findByIdWithControl(String id) {
         Optional<E> optionalE = repository.findById(id);
         E entity;
         if (optionalE.isPresent()) {
@@ -45,7 +45,7 @@ public abstract class BaseEntityService<E, R extends SolrCrudRepository<E, Long>
         return entity;
     }
 
-    public void delete(Long id) {
+    public void delete(String id) {
         repository.deleteById(id);
     }
 
@@ -54,7 +54,7 @@ public abstract class BaseEntityService<E, R extends SolrCrudRepository<E, Long>
         repository.delete(entity);
     }
 
-    public boolean existById(Long id) {
+    public boolean existById(String id) {
         return repository.existsById(id);
     }
 

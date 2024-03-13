@@ -13,9 +13,9 @@ public interface RestaurantService {
 
     Iterable<RestaurantDTO> getAllRestaurants();
 
-    RestaurantDTO getRestaurantById(Long id);
+    RestaurantDTO getRestaurantById(String id);
 
     RestaurantDTO updateRestaurant(RestaurantUpdateRequest request);
 
-    void deleteRestaurant(Long id);
+    void deleteRestaurant(String id);
 }

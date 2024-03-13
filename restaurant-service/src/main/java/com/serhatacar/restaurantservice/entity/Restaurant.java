@@ -22,12 +22,12 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Getter
 @Setter
-@SolrDocument(solrCoreName = "restaurant  ")
+@SolrDocument(solrCoreName = "restaurants")
 public class Restaurant {
 
     @Id
-    @Indexed(name = "id", type = "plong")
-    private Long id;
+    @Indexed(name = "id", type = "string")
+    private String id;
 
     @Indexed(name = "name", type = "string")
     private String name;

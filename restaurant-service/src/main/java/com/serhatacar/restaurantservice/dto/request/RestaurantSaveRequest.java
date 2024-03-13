@@ -18,6 +18,6 @@ public record RestaurantSaveRequest (
                                                 String workingHours,
                                                 double latitude,
                                                 double longitude,
-                                                BigDecimal restaurantRate,
+                                                Double restaurantRate,
                                                 Status status) {
 }

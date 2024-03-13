@@ -9,7 +9,7 @@ import java.math.BigDecimal;
  */
 
 public record RestaurantUpdateRequest(
-                                                    Long id,
+                                                    String id,
                                                     String name,
                                                     String address,
                                                     String phone,

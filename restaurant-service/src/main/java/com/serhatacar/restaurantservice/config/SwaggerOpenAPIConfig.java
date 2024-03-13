@@ -12,6 +12,7 @@ import io.swagger.v3.oas.annotations.servers.Server;
 /**
  * Swagger OpenAPI configuration class
  * /
+ *
  * @author Serhat Acar
  */
 @OpenAPIDefinition(
@@ -25,7 +26,7 @@ import io.swagger.v3.oas.annotations.servers.Server;
                 description = "Source code on GitHub",
                 url = "https://www.github.com/sserhatacarr/dineExperienceApp"
         ),
-        servers = {@Server(description = "restaurant-service", url = "http://localhost:8080")}
+        servers = {@Server(description = "restaurant-service", url = "http://localhost:8081")}
 
 )
 @SecurityScheme(

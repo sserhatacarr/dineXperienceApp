@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  * @author Serhat Acar
  */
 
-@FeignClient(name = "user-service",path = "/api/v1/users")
+@FeignClient(name = "USER-SERVICE",path = "/api/v1/users")
 public interface UserClient {
 
     @GetMapping("/{id}")

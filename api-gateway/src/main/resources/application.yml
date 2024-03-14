@@ -5,12 +5,12 @@ spring:
     gateway:
       routes:
         - id: restaurant-service
-          uri: lb://restaurant-service
+          uri: lb://RESTAURANT-SERVICE
           predicates:
             - Path=/api/v1/restaurants/**
 
         - id: user-service
-          uri: lb://user-service
+          uri: lb://USER-SERVICE
           predicates:
             - Path=/api/v1/users/**
 

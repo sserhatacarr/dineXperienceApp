@@ -14,7 +14,7 @@ import java.util.List;
  * @author Serhat Acar
  */
 
-@FeignClient(name = "restaurant-service", path = "/api/v1/restaurants")
+@FeignClient(name = "RESTAURANT_SERVICE", path = "/api/v1/restaurants")
 public interface RestaurantClient {
 
     @GetMapping()

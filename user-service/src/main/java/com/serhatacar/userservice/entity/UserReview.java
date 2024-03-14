@@ -21,16 +21,16 @@ public class UserReview extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "restaurant_id")
+    @Column(name = "restaurant_id", length = 50, nullable = false)
     private String restaurantId;
 
-    @Column(name = "comment")
+    @Column(name = "comment", length = 500, nullable = false)
     private String comment;
 
-    @Column(name = "user_rate")
+    @Column(name = "user_rate", nullable = false, precision = 3, scale = 2)
     private BigDecimal userRate;
 
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", nullable = false)
     @ManyToOne
     private User user;
 

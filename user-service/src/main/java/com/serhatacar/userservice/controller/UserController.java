@@ -8,6 +8,8 @@ import com.serhatacar.userservice.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Positive;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -45,7 +47,7 @@ public class UserController {
             @ApiResponse(responseCode = "500", description = "Internal Server Error")
     })
     @GetMapping("/{id}")
-    public ResponseEntity<RestResponse<UserDTO>> getUserById(@PathVariable Long id) {
+    public ResponseEntity<RestResponse<UserDTO>> getUserById(@PathVariable @Positive Long id) {
         UserDTO userDTO = userService.getUserById(id);
         return ResponseEntity.ok(RestResponse.of(userDTO, "User listed."));
     }
@@ -58,7 +60,7 @@ public class UserController {
             @ApiResponse(responseCode = "500", description = "Internal Server Error")
     })
     @PostMapping
-    public ResponseEntity<RestResponse<UserDTO>> saveUser(@RequestBody UserSaveRequest user) {
+    public ResponseEntity<RestResponse<UserDTO>> saveUser(@Valid @RequestBody UserSaveRequest user) {
         UserDTO userDTO = userService.saveUser(user);
         return ResponseEntity.ok(RestResponse.of(userDTO, "User saved."));
     }
@@ -71,7 +73,7 @@ public class UserController {
             @ApiResponse(responseCode = "500", description = "Internal Server Error")
     })
     @PutMapping("/{debugId}")
-    public ResponseEntity<RestResponse<UserDTO>> updateUser(@PathVariable Long debugId, @RequestBody UserUpdateRequest user) {
+    public ResponseEntity<RestResponse<UserDTO>> updateUser(@PathVariable Long debugId, @Valid @RequestBody UserUpdateRequest user) {
         UserDTO userDTO = userService.updateUser(user);
         return ResponseEntity.ok(RestResponse.of(userDTO, "User updated."));
     }

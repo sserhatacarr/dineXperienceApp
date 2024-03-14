@@ -9,6 +9,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.Positive;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,7 +33,7 @@ public class UserReviewController {
             @ApiResponse(responseCode = "500", description = "Internal Server Error")
     })
     @GetMapping("/{id}")
-    public ResponseEntity<RestResponse<UserReviewDetailDTO>> getUserReviewById(@PathVariable Long id) {
+    public ResponseEntity<RestResponse<UserReviewDetailDTO>> getUserReviewById(@PathVariable @Positive Long id) {
         UserReviewDetailDTO userReviewDetailDTO = userReviewService.getUserReviewById(id);
         return new ResponseEntity<>(RestResponse.of(userReviewDetailDTO, "User review listed successfully"), HttpStatus.OK);
     }
@@ -67,7 +68,7 @@ public class UserReviewController {
             @ApiResponse(responseCode = "500", description = "Internal Server Error")
     })
     @GetMapping("/user/{userId}")
-    public ResponseEntity<RestResponse<List<UserReviewDetailDTO>>> getUserReviewsByUserId(@PathVariable Long userId) {
+    public ResponseEntity<RestResponse<List<UserReviewDetailDTO>>> getUserReviewsByUserId(@PathVariable @Positive Long userId) {
         List<UserReviewDetailDTO > userReviewDetailDTOs = userReviewService.getUserReviewsByUserId(userId);
         return new ResponseEntity<>(RestResponse.of(userReviewDetailDTOs, "User reviews listed successfully"), HttpStatus.OK);
     }
@@ -103,7 +104,7 @@ public class UserReviewController {
             @ApiResponse(responseCode = "500", description = "Internal Server Error")
     })
     @DeleteMapping("/{id}")
-    public ResponseEntity<RestResponse<String>> deleteUserReview(@PathVariable Long id) {
+    public ResponseEntity<RestResponse<String>> deleteUserReview(@PathVariable @Positive Long id) {
         userReviewService.deleteUserReview(id);
         return new ResponseEntity<>(RestResponse.empty("User review deleted successfully"), HttpStatus.OK);
     }

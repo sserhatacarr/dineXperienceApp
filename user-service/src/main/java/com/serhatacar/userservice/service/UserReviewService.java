@@ -19,7 +19,7 @@ public interface UserReviewService {
 
     List<UserReviewDetailDTO> getUserReviewsByUserId(Long userId);
 
-    List<UserReviewDetailDTO> getUserReviewsByRestaurantId(Long restaurantId);
+    List<UserReviewDetailDTO> getUserReviewsByRestaurantId(String restaurantId);
 
     UserReviewDetailDTO editUserReview(UserReviewUpdateRequest request);
 

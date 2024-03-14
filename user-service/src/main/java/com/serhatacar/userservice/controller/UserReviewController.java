@@ -79,7 +79,7 @@ public class UserReviewController {
             @ApiResponse(responseCode = "500", description = "Internal Server Error")
     })
     @GetMapping("/restaurant/{restaurantId}")
-    public ResponseEntity<RestResponse<List<UserReviewDetailDTO>>> getUserReviewsByRestaurantId(@PathVariable Long restaurantId) {
+    public ResponseEntity<RestResponse<List<UserReviewDetailDTO>>> getUserReviewsByRestaurantId(@PathVariable String restaurantId) {
         List<UserReviewDetailDTO> userReviewDetailDTOs = userReviewService.getUserReviewsByRestaurantId(restaurantId);
         return new ResponseEntity<>(RestResponse.of(userReviewDetailDTOs, "User reviews listed successfully"), HttpStatus.OK);
     }

@@ -22,7 +22,7 @@ public class UserReview extends BaseEntity {
     private Long id;
 
     @Column(name = "restaurant_id")
-    private Long restaurantId;
+    private String restaurantId;
 
     @Column(name = "comment")
     private String comment;

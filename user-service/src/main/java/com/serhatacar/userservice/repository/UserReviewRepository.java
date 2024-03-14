@@ -12,5 +12,5 @@ import java.util.List;
 public interface UserReviewRepository extends JpaRepository<UserReview, Long> {
 
     List<UserReview> findByUserId(Long userId);
-    List<UserReview> findByRestaurantId(Long restaurantId);
+    List<UserReview> findByRestaurantId(String restaurantId);
 }

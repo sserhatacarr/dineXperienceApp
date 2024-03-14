@@ -63,7 +63,7 @@ public class UserReviewServiceImpl implements UserReviewService {
     }
 
     @Override
-    public List<UserReviewDetailDTO> getUserReviewsByRestaurantId(Long restaurantId) {
+    public List<UserReviewDetailDTO> getUserReviewsByRestaurantId(String restaurantId) {
 
         List<UserReview> userReviews = userReviewEntityService.findByRestaurantId(restaurantId);
         RestaurantDTO restaurantDTO = restaurantClient.getRestaurantById(restaurantId).getBody().getData();

@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 public record UserReviewDetailDTO(
         Long id,
         User user,
-        Long restaurantId,
+        String restaurantId,
         String restaurantName,
         String comment,
         BigDecimal userRate ){

@@ -9,7 +9,7 @@ import java.math.BigDecimal;
  */
 
 public record UserReviewSaveRequest(
-                                    Long restaurantId,
+                                    String restaurantId,
                                     String comment,
                                     BigDecimal userRate,
                                     User user) {

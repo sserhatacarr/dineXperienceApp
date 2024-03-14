@@ -14,7 +14,7 @@ import java.util.List;
  * @author Serhat Acar
  */
 
-@FeignClient(name = "RESTAURANT-SERVICE", path = "/api/v1/restaurants")
+@FeignClient(name = "restaurant-service", path = "/api/v1/restaurants")
 public interface RestaurantClient {
 
     @GetMapping()
@@ -22,7 +22,7 @@ public interface RestaurantClient {
 
 
     @GetMapping ("/{id}")
-    ResponseEntity<RestResponse<RestaurantDTO>> getRestaurantById(@PathVariable(name="id") Long id);
+    ResponseEntity<RestResponse<RestaurantDTO>> getRestaurantById(@PathVariable(name="id") String id);
 
 
 }

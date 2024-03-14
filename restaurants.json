@@ -8,7 +8,7 @@
     }
   },
   "response":{
-    "numFound":19,
+    "numFound":10,
     "start":0,
     "numFoundExact":true,
     "docs":[{
@@ -17,85 +17,140 @@
       "address":["Test Address 1"],
       "phone":["1234567890"],
       "email":["test1@test.com"],
-      "description":["Test Description"],
       "website":["www.testrestaurant1.com"],
+      "description":["Test Description"],
       "workingHours":["09:00-18:00"],
       "latitude":[40.712776],
-      "longitude":[-74.005974],
+      "longitude":[-74.005978],
       "restaurantRate":[1.0],
       "status":["ACTIVE"],
-      "_version_":1793447906834907136
-    },{
-      "id":"2883f4c0-7f6b-440e-a9ba-e3a3ff56c3e2",
-      "_version_":1793447906834907136
+      "_version_":1793520103535411200
     },{
       "id":"2",
       "name":["Test Restaurant 2"],
       "address":["Test Address 2"],
-      "phone":["9876543210"],
-      "email":["test2@test.com"],
-      "description":["Another Test Description"],
+      "phone":["1234567890"],
+      "email":["test1@test.com"],
       "website":["www.testrestaurant2.com"],
-      "workingHours":["10:00-20:00"],
-      "latitude":[41.878113],
-      "longitude":[-87.629799],
+      "description":["Test Description"],
+      "workingHours":["09:00-18:00"],
+      "latitude":[41.782776],
+      "longitude":[-74.005978],
       "restaurantRate":[2.0],
       "status":["ACTIVE"],
-      "_version_":1793447906841198592
-    },{
-      "id":"90cf2f81-7ae5-4ad9-b1c0-a37f3540b22d",
-      "_version_":1793447906841198592
+      "_version_":1793520225397768192
     },{
       "id":"3",
       "name":["Test Restaurant 3"],
       "address":["Test Address 3"],
-      "phone":["5555555555"],
+      "phone":["1234567890"],
       "email":["test3@test.com"],
-      "description":["Yet Another Test Description"],
       "website":["www.testrestaurant3.com"],
-      "workingHours":["08:00-17:00"],
-      "latitude":[34.052235],
-      "longitude":[-118.243683],
+      "description":["Test Description"],
+      "workingHours":["09:00-18:00"],
+      "latitude":[41.782776],
+      "longitude":[-75.005978],
       "restaurantRate":[3.0],
       "status":["ACTIVE"],
-      "_version_":1793447906842247168
-    },{
-      "id":"41c95257-2531-48bb-a148-c14cc9750ca9",
-      "_version_":1793447906842247168
+      "_version_":1793520285960372224
     },{
       "id":"4",
       "name":["Test Restaurant 4"],
       "address":["Test Address 4"],
-      "phone":["1231231234"],
-      "email":["test4@test.com"],
-      "description":["Description for Test Restaurant 4"],
+      "phone":["1234567890"],
+      "email":["test3@test.com"],
       "website":["www.testrestaurant4.com"],
-      "workingHours":["11:00-22:00"],
-      "latitude":[37.774929],
-      "longitude":[-122.419416],
+      "description":["Test Description"],
+      "workingHours":["09:00-18:00"],
+      "latitude":[40.782776],
+      "longitude":[-76.005978],
       "restaurantRate":[4.0],
       "status":["ACTIVE"],
-      "_version_":1793448000759005184
-    },{
-      "id":"d899071b-a387-4815-9960-c11a4f515863",
-      "_version_":1793448000759005184
+      "_version_":1793521603976364032
     },{
       "id":"5",
       "name":["Test Restaurant 5"],
       "address":["Test Address 5"],
-      "phone":["9876543210"],
-      "email":["test5@test.com"],
-      "description":["Description for Test Restaurant 5"],
+      "phone":["1234567890"],
+      "email":["test3@test.com"],
       "website":["www.testrestaurant5.com"],
+      "description":["Test Description"],
+      "workingHours":["09:00-18:00"],
+      "latitude":[40.792746],
+      "longitude":[-75.005978],
+      "restaurantRate":[5.0],
+      "status":["ACTIVE"],
+      "_version_":1793521646880948224
+    },{
+      "id":"6",
+      "name":["Test Restaurant 6"],
+      "address":["Test Address 6"],
+      "phone":["1234567890"],
+      "email":["test3@test.com"],
+      "website":["www.testrestaurant6.com"],
+      "description":["Test Description"],
+      "workingHours":["09:00-18:00"],
+      "latitude":[40.892746],
+      "longitude":[-75.105978],
+      "restaurantRate":[6.0],
+      "status":["ACTIVE"],
+      "_version_":1793521763764666368
+    },{
+      "id":"7",
+      "name":["Test Restaurant 7"],
+      "address":["Test Address 7"],
+      "phone":["1234567890"],
+      "email":["test7@test.com"],
+      "website":["www.testrestaurant7.com"],
+      "description":["Test Description"],
+      "workingHours":["09:00-18:00"],
+      "latitude":[50.782776],
+      "longitude":[-84.005974],
+      "restaurantRate":[2.0],
+      "status":["ACTIVE"],
+      "_version_":1793522000592896000
+    },{
+      "id":"8",
+      "name":["Test Restaurant 8"],
+      "address":["Test Address 8"],
+      "phone":["1234567890"],
+      "email":["test8@test.com"],
+      "website":["www.testrestaurant8.com"],
+      "description":["Test Description"],
+      "workingHours":["09:00-18:00"],
+      "latitude":[40.782776],
+      "longitude":[-74.005974],
+      "restaurantRate":[3.0],
+      "status":["ACTIVE"],
+      "_version_":1793522062303690752
+    },{
+      "id":"9",
+      "name":["Test Restaurant 9"],
+      "address":["Test Address 9"],
+      "phone":["1234567890"],
+      "email":["test9@test.com"],
+      "website":["www.testrestaurant9.com"],
+      "description":["Test Description"],
+      "workingHours":["09:00-18:00"],
+      "latitude":[40.712756],
+      "longitude":[-74.005974],
+      "restaurantRate":[4.0],
+      "status":["ACTIVE"],
+      "_version_":1793522114958983168
+    },{
+      "id":"10",
+      "name":["Test Restaurant 10"],
+      "address":["Test Address 10"],
+      "phone":["1234567890"],
+      "email":["test10@test.com"],
+      "website":["www.testrestaurant10.com"],
+      "description":["Test Description"],
       "workingHours":["09:00-18:00"],
       "latitude":[40.712776],
       "longitude":[-74.005974],
-      "restaurantRate":[2.0],
+      "restaurantRate":[5.0],
       "status":["ACTIVE"],
-      "_version_":1793448000760053760
-    },{
-      "id":"17ecbd15-7e1c-46a8-80cc-e526dcff3a87",
-      "_version_":1793448000760053760
+      "_version_":1793522188441092096
     }]
   }
 }

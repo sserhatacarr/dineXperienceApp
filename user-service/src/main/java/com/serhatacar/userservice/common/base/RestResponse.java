@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * @author Serhat Acar
@@ -23,6 +24,9 @@ public class RestResponse<T> {
         this.responseDate = LocalDateTime.now();
         this.isSuccess = isSuccess;
         this.message = message;
+    }
+
+    public <T> RestResponse(List<T> ts) {
     }
 
     public static <T> RestResponse<T> of(T data, String message) {

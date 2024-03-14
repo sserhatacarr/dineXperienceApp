@@ -19,6 +19,7 @@ public record RestaurantWithScoreDTO(
         double longitude,
         Double restaurantRate,
         double score,
+        double distance,
         Status status
 
 ) {

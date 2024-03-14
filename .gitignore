@@ -58,3 +58,5 @@ Applications
 /recommendation-service/
 /search-service/
 /data/log4j2.xml
+/logging-service/mvnw
+/logging-service/mvnw.cmd

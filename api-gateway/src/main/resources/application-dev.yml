@@ -1,0 +1,13 @@
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    hostname: localhost
+    preferIpAddress: true
+management:
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411

@@ -7,19 +7,23 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 123
+      POSTGRES_DB: user_service_db
     ports:
-      - 5433:5433
+      - 5432:5432
+    networks:
+      - back-tier
     volumes:
       - db_data:/var/lib/postgresql/data
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
 
   solr:
     image: solr
-    build: .
+    container_name: solr
     ports:
       - "8983:8983"
     volumes:
       - data:/var/solr
+    networks:
+      - back-tier
     command:
       - solr-precreate
       - restaurants
@@ -27,9 +31,57 @@ services:
   zipkin:
     image: openzipkin/zipkin
     container_name: zipkin
+    networks:
+      - back-tier
     ports:
       - 9411:9411
+  discovery-server:
+    build:
+      context: ./discovery-server
+      dockerfile: Dockerfile
+    container_name: discovery-server
+    ports:
+      - "8761:8761"
+    networks:
+      - back-tier
+    restart: always
+    
+  api-gateway:
+    build:
+      context: ./api-gateway
+      dockerfile: Dockerfile
+    container_name: api-gateway
+    ports:
+      - "8080:8080"
+    networks:
+      - back-tier
+    restart: always
+
+  restaurant-service:
+    build:
+      context: ./restaurant-service
+      dockerfile: Dockerfile
+    container_name: restaurant-service
+    ports:
+      - "8081:8081"
+    networks:
+      - back-tier
+    restart: always    
+    
+  user-service:
+    build:
+      context: ./user-service
+      dockerfile: Dockerfile
+    container_name: user-service
+    ports:
+      - "8082:8082"
+    networks:
+      - back-tier
+    restart: always    
+  
 
 volumes:
   db_data:
   data:
+networks:
+  back-tier:

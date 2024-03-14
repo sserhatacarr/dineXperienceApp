@@ -1,4 +1,4 @@
-package com.serhataca.discoveryserver;
+package com.serhatacar.discoveryserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

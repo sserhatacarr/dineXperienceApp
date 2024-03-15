@@ -32,8 +32,6 @@ VS Code
 
 Maven
 dist/
-/mvnw
-/mvnw.cmd
 
 JetBrains IDE
 .idea/
@@ -48,14 +46,8 @@ Applications
 *.app
 *.exe
 *.war
-/user-service/mvnw
-/user-service/mvnw.cmd
+
 /dineXperienceApp uml diagram.puml
-/restaurant-service/mvnw.cmd
-/recommendation-service/mvnw.cmd
-/recommendation-service/mvnw
-/recommendation-service/
-/search-service/
+
 /data/log4j2.xml
-/logging-service/mvnw
-/logging-service/mvnw.cmd
+

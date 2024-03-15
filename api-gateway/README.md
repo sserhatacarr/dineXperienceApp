@@ -1,9 +1,9 @@
 
 # API Gateway Service
 
-The API Gateway is the central entry point for all services in our microservice architecture. This service routes incoming requests to the relevant microservices.
-
 [Go to Turkish README](README_TR.md)
+
+The API Gateway is the central entry point for all services in our microservice architecture. This service routes incoming requests to the relevant microservices.
 
 ## Key Features
 

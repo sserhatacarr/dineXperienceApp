@@ -1,10 +1,9 @@
 
 # API Gateway Servisi
 
-API Gateway, microservice mimarimizdeki tüm servislerin merkezi bir giriş noktasıdır. Bu servis, gelen istekleri ilgili mikroservislere yönlendirir.
-
 [Go to English README](README.md)
 
+API Gateway, microservice mimarimizdeki tüm servislerin merkezi bir giriş noktasıdır. Bu servis, gelen istekleri ilgili mikroservislere yönlendirir.
 
 ## Başlıca Özellikler
 

@@ -1,8 +1,8 @@
 # Discovery Service
 
-The Discovery Service is a key component in our microservice architecture. It allows for the registration of microservices and enables service discovery, which is essential for load balancing and failover of services.
-
 [Go to Turkish README](README_TR.md)
+
+The Discovery Service is a key component in our microservice architecture. It allows for the registration of microservices and enables service discovery, which is essential for load balancing and failover of services.
 
 ## Key Features
 

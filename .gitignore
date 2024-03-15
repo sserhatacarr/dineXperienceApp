@@ -32,7 +32,6 @@ VS Code
 
 Maven
 dist/
-.mvn
 /mvnw
 /mvnw.cmd
 

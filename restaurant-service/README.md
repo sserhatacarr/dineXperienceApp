@@ -4,6 +4,15 @@
 
 The Restaurant Service is a pivotal component in our microservice architecture. It is responsible for managing restaurant data and provides functionalities for creating, updating, deleting, and retrieving restaurant information. In addition to these basic CRUD operations, the Restaurant Service also offers a sophisticated recommendation feature. This feature calculates a score for each restaurant based on its distance from the user and its rating, considering only restaurants within a 10 km radius from the user. The score is a weighted combination of the restaurant's rating (70%) and its proximity to the user (30%). The service then sorts the restaurants in descending order of their scores and returns the top 3 recommendations. This recommendation feature enhances the user experience by providing personalized restaurant suggestions based on user location and restaurant ratings.
 
+## User Client
+
+The `UserClient` is a Feign client in the Restaurant Service. Feign is a declarative web service client that simplifies the process of writing HTTP clients. In our microservice architecture, it is used to facilitate communication between services.
+
+In this context, the `UserClient` is used to communicate with the User Service. It has one main operation:
+
+- `getUserById(Long id)`: This operation fetches a specific user by their ID from the User Service. It corresponds to a `GET /api/v1/users/{id}` request to the User Service.
+
+This operation is essential for the Restaurant Service to manage restaurant recommendations for users. When the system needs to recommend restaurants to a user, the Restaurant Service uses the `UserClient` to fetch the details of the user, including their location, from the User Service. This ensures that recommendations can be personalized based on the user's location, enhancing the user experience by providing tailored restaurant suggestions.
 
 ## Restaurant Controller
 
@@ -84,4 +93,3 @@ The score is calculated as follows:
 - 30% of the score comes from the distance of the restaurant from the user. The closer the restaurant, the higher this part of the score will be.
 
 After calculating the scores, the algorithm sorts the restaurants in descending order of their scores and returns the top 3.
-

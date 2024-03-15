@@ -19,7 +19,6 @@ public class RecommendationEngine {
             double restaurantLon = restaurant.getLongitude();
             double distance = RecommendationUtils.calculateDistance(userLat, userLon, restaurantLat, restaurantLon);
 
-            distance = Double.parseDouble(df.format(distance));
 
             if(distance > 10) continue; // If the distance is more than 10 km, do not recommend the restaurant !
 

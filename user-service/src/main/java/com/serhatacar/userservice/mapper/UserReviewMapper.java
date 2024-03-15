@@ -21,6 +21,7 @@ public interface UserReviewMapper {
                                                   RestaurantDTO restaurantDTO) {
 
         return UserReviewDetailDTO.builder()
+                .id(userReview.getId())
                 .user(userReview.getUser())
                 .restaurantId(userReview.getRestaurantId())
                 .userRate(userReview.getUserRate())

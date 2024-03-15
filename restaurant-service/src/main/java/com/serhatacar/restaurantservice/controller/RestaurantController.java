@@ -22,7 +22,7 @@ public class RestaurantController {
 
     private final RestaurantService restaurantService;
 
-     @Operation(summary = "GET request for all restaurants", description = "Returns all restaurants in database<br>Accessible to admin users only.")
+     @Operation(summary = "GET request for all restaurants", description = "Returns all restaurants in database")
      @ApiResponses(value = {
              @ApiResponse(responseCode = "200", description = "Success"),
              @ApiResponse(responseCode = "500", description = "Internal Server Error")
@@ -32,7 +32,7 @@ public class RestaurantController {
          return ResponseEntity.ok(RestResponse.of(restaurantService.getAllRestaurants(), "Restaurants are fetched successfully"));
      }
 
-     @Operation(summary = "GET request for restaurant by id", description = "Returns a restaurant by id <br>Accessible to admin users only.")
+     @Operation(summary = "GET request for restaurant by id", description = "Returns a restaurant by id")
      @ApiResponses(value = {
              @ApiResponse(responseCode = "200", description = "Success"),
              @ApiResponse(responseCode = "404", description = "Not Found<br>-Restaurant not found"),
@@ -43,7 +43,7 @@ public class RestaurantController {
         return ResponseEntity.ok(RestResponse.of(restaurantService.getRestaurantById(id), "Restaurant is fetched successfully"));
     }
 
-    @Operation(summary = "POST request to save a restaurant", description = "Saves a restaurant to database<br>Accessible to admin users only.")
+    @Operation(summary = "POST request to save a restaurant", description = "Saves a restaurant to database")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Success"),
             @ApiResponse(responseCode = "400", description = "Bad Request<br>- E-mail already exists"),
@@ -54,7 +54,7 @@ public class RestaurantController {
         return ResponseEntity.ok(RestResponse.of(restaurantService.saveRestaurant(request), "Restaurant is saved successfully"));
     }
 
-    @Operation(summary = "PUT request to update a restaurant", description = "Updates a restaurant in database<br>Accessible to admin users only.")
+    @Operation(summary = "PUT request to update a restaurant", description = "Updates a restaurant in database")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Success"),
             @ApiResponse(responseCode = "400", description = "Bad Request<br>- Restaurant not found"),
@@ -65,7 +65,7 @@ public class RestaurantController {
         return ResponseEntity.ok(RestResponse.of(restaurantService.updateRestaurant(request), "Restaurant is updated successfully"));
     }
 
-    @Operation(summary = "DELETE request to delete a restaurant", description = "Deletes a restaurant from database<br>Accessible to admin users only.")
+    @Operation(summary = "DELETE request to delete a restaurant", description = "Deletes a restaurant from database")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Success"),
             @ApiResponse(responseCode = "400", description = "Bad Request<br>- Restaurant not found"),

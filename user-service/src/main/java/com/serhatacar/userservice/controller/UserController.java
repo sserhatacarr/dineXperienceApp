@@ -27,7 +27,7 @@ public class UserController {
 
     private final UserService userService;
 
-    @Operation(summary = "GET request for all users", description = "Returns all users in database<br>Accessible to admin users only.")
+    @Operation(summary = "GET request for all users", description = "Returns all users in database.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Success"),
             @ApiResponse(responseCode = "401", description = "Unauthorized<br>-Token invalid (wrong or expired token)"),
@@ -39,7 +39,7 @@ public class UserController {
         return ResponseEntity.ok(RestResponse.of(allUsers, "All users listed."));
     }
 
-    @Operation(summary = "GET request for a user by id", description = "Returns a user by id<br>Accessible to admin users only.")
+    @Operation(summary = "GET request for a user by id", description = "Returns a user by id.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Success"),
             @ApiResponse(responseCode = "401", description = "Unauthorized<br>-Token invalid (wrong or expired token)"),
@@ -52,7 +52,7 @@ public class UserController {
         return ResponseEntity.ok(RestResponse.of(userDTO, "User listed."));
     }
 
-    @Operation(summary = "POST request to save a user", description = "Saves a user to database<br>Accessible to admin users only.")
+    @Operation(summary = "POST request to save a user", description = "Saves a user to database.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Success"),
             @ApiResponse(responseCode = "400", description = "Bad Request<br>- E-mail already exists"),
@@ -65,7 +65,7 @@ public class UserController {
         return ResponseEntity.ok(RestResponse.of(userDTO, "User saved."));
     }
 
-    @Operation(summary = "PUT request to update a user", description = "Updates a user in database<br>Accessible to admin users only.")
+    @Operation(summary = "PUT request to update a user", description = "Updates a user in database.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Success"),
             @ApiResponse(responseCode = "401", description = "Unauthorized<br>-Token invalid (wrong or expired token)"),
@@ -78,7 +78,7 @@ public class UserController {
         return ResponseEntity.ok(RestResponse.of(userDTO, "User updated."));
     }
 
-    @Operation(summary = "DELETE request to delete a user", description = "Deletes a user from database<br>Accessible to admin users only.")
+    @Operation(summary = "DELETE request to delete a user", description = "Deletes a user from database.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Success"),
             @ApiResponse(responseCode = "401", description = "Unauthorized<br>-Token invalid (wrong or expired token)"),

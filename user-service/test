@@ -1,0 +1,191 @@
+curl http://localhost:8983/solr/restaurants/update?commit=true -H "Content-Type: application/json" --data-binary '{
+  "add": {
+    "doc": {
+      "id" : "1",
+      "name" : "Test Restaurant 1",
+      "address" : "Test Address 1",
+      "phone" : "1234567890",
+      "email" : "test1@test.com",
+      "description" : "Test Description",
+      "website" : "www.testrestaurant1.com",
+      "workingHours" : "09:00-18:00",
+      "latitude" : 40.71,
+      "longitude" : -74.05,
+      "restaurantRate" : 1,
+      "status" : "ACTIVE"
+    }
+  }
+}'
+
+curl http://localhost:8983/solr/restaurants/update?commit=true -H "Content-Type: application/json" --data-binary '{
+  "add": {
+    "doc": {
+      "id" : "2",
+      "name" : "Test Restaurant 2",
+      "address" : "Test Address 2",
+      "phone" : "1234567890",
+      "email" : "test2@test.com",
+      "description" : "Test Description",
+      "website" : "www.testrestaurant2.com",
+      "workingHours" : "09:00-18:00",
+      "latitude" : 40.74,
+      "longitude" : -74.00,
+      "restaurantRate" : 2,
+      "status" : "ACTIVE"
+    }
+  }
+}'
+
+curl http://localhost:8983/solr/restaurants/update?commit=true -H "Content-Type: application/json" --data-binary '{
+  "add": {
+    "doc": {
+      "id" : "3",
+      "name" : "Test Restaurant 3",
+      "address" : "Test Address 3",
+      "phone" : "1234567890",
+      "email" : "test3@test.com",
+      "description" : "Test Description",
+      "website" : "www.testrestaurant3.com",
+      "workingHours" : "09:00-18:00",
+      "latitude" : 40.71,
+      "longitude" : -74.30,
+      "restaurantRate" : 3,
+      "status" : "ACTIVE"
+    }
+  }
+}'
+
+curl http://localhost:8983/solr/restaurants/update?commit=true -H "Content-Type: application/json" --data-binary '{
+  "add": {
+    "doc": {
+       "id" : "4",
+      "name" : "Test Restaurant 4",
+      "address" : "Test Address 4",
+      "phone" : "1234567890",
+      "email" : "test4@test.com",
+      "description" : "Test Description",
+      "website" : "www.testrestaurant4.com",
+      "workingHours" : "09:00-18:00",
+      "latitude" : 40.71,
+      "longitude" : -74.02,
+      "restaurantRate" : 4,
+      "status" : "ACTIVE"
+    }
+  }
+}'
+
+curl http://localhost:8983/solr/restaurants/update?commit=true -H "Content-Type: application/json" --data-binary '{
+  "add": {
+    "doc": {
+      "id" : "5",
+      "name" : "Test Restaurant 5",
+      "address" : "Test Address 5",
+      "phone" : "1234567890",
+      "email" : "test5@test.com",
+      "description" : "Test Description",
+      "website" : "www.testrestaurant5.com",
+      "workingHours" : "09:00-18:00",
+      "latitude" : 40.7132,
+      "longitude" : -74.20,
+      "restaurantRate" : 5,
+      "status" : "ACTIVE"
+    }
+  }
+}'
+
+curl http://localhost:8983/solr/restaurants/update?commit=true -H "Content-Type: application/json" --data-binary '{
+  "add": {
+    "doc": {
+      "id" : "6",
+      "name" : "Test Restaurant 7",
+      "address" : "Test Address 7",
+      "phone" : "1234567890",
+      "email" : "test7@test.com",
+      "description" : "Test Description",
+      "website" : "www.testrestaurant7.com",
+      "workingHours" : "09:00-18:00",
+      "latitude" : 41.71,
+      "longitude" : -73.05,
+      "restaurantRate" : 1,
+      "status" : "ACTIVE"
+    }
+  }
+}'
+
+curl http://localhost:8983/solr/restaurants/update?commit=true -H "Content-Type: application/json" --data-binary '{
+  "add": {
+    "doc": {
+      "id" : "7",
+      "name" : "Test Restaurant 7",
+      "address" : "Test Address 7",
+      "phone" : "1234567890",
+      "email" : "test7@test.com",
+      "description" : "Test Description",
+      "website" : "www.testrestaurant7.com",
+      "workingHours" : "09:00-18:00",
+      "latitude" : 41.74,
+      "longitude" : -73.20,
+      "restaurantRate" : 2,
+      "status" : "ACTIVE"
+    }
+  }
+}'
+
+curl http://localhost:8983/solr/restaurants/update?commit=true -H "Content-Type: application/json" --data-binary '{
+  "add": {
+    "doc": {
+      "id" : "8",
+      "name" : "Test Restaurant 8",
+      "address" : "Test Address 8",
+      "phone" : "1234567890",
+      "email" : "test8@test.com",
+      "description" : "Test Description",
+      "website" : "www.testrestaurant8.com",
+      "workingHours" : "09:00-18:00",
+      "latitude" : 40.75,
+      "longitude" : -74.50,
+      "restaurantRate" : 3,
+      "status" : "ACTIVE"
+    }
+  }
+}'
+
+curl http://localhost:8983/solr/restaurants/update?commit=true -H "Content-Type: application/json" --data-binary '{
+  "add": {
+    "doc": {
+       "id" : "9",
+      "name" : "Test Restaurant 9",
+      "address" : "Test Address 9",
+      "phone" : "1234567890",
+      "email" : "test9@test.com",
+      "description" : "Test Description",
+      "website" : "www.testrestaurant9.com",
+      "workingHours" : "09:00-18:00",
+      "latitude" : 42.71,
+      "longitude" : -73.02,
+      "restaurantRate" : 4,
+      "status" : "ACTIVE"
+    }
+  }
+}'
+
+curl http://localhost:8983/solr/restaurants/update?commit=true -H "Content-Type: application/json" --data-binary '{
+  "add": {
+    "doc": {
+      "id" : "10",
+      "name" : "Test Restaurant 10",
+      "address" : "Test Address 10",
+      "phone" : "1234567890",
+      "email" : "test5@test.com",
+      "description" : "Test Description",
+      "website" : "www.testrestaurant10.com",
+      "workingHours" : "09:00-18:00",
+      "latitude" : 41.71,
+      "longitude" : -71.20,
+      "restaurantRate" : 5,
+      "status" : "ACTIVE"
+    }
+  }
+}'
+
+

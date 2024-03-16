@@ -1,4 +1,3 @@
-/*
 package com.serhatacar.restaurantservice.config;
 
 import io.swagger.v3.oas.annotations.ExternalDocumentation;
@@ -10,13 +9,13 @@ import io.swagger.v3.oas.annotations.info.Info;
 import io.swagger.v3.oas.annotations.security.SecurityScheme;
 import io.swagger.v3.oas.annotations.servers.Server;
 
-*/
+
 /**
  * Swagger OpenAPI configuration class
  * /
  *
  * @author Serhat Acar
- *//*
+ */
 
 @OpenAPIDefinition(
         info = @Info(
@@ -41,4 +40,4 @@ import io.swagger.v3.oas.annotations.servers.Server;
         in = SecuritySchemeIn.HEADER
 )
 public class SwaggerOpenAPIConfig {
-}*/
+}

@@ -11,3 +11,13 @@ management:
   zipkin:
     tracing:
       endpoint: http://localhost:9411
+
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedHeaders: "*"
+            allowedMethods: "*"

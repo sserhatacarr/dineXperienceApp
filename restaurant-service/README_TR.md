@@ -1,6 +1,6 @@
 # Restaurant Servisi
 
-[Go to English README](README.md)
+[İngilizce README'ye git](README.md)
 
 Restaurant Servisi, mikroservis mimarimizin önemli bir bileşenidir. Restaurant verilerini yönetmekten sorumludur ve restaurant bilgilerini oluşturma, güncelleme, silme ve almak için işlevler sağlar. Bu temel CRUD işlemlerinin yanı sıra, Restaurant Servisi ayrıca özel bir öneri özelliği sunar. Bu özellik, her bir restoran için bir puan hesaplar, bu hesaplama kullanıcının restorana olan mesafesi ve restoranın puanına dayanır, sadece kullanıcıdan 10 km yarıçapında olan restoranları dikkate alır. Puan, restoranın puanının (%70) ve kullanıcıya olan yakınlığının (%30) ağırlıklı bir kombinasyonudur. Servis daha sonra restoranları puanlarına göre azalan sırayla sıralar ve en üstteki 3 öneriyi döndürür. Bu öneri özelliği, kullanıcı konumu ve restoran puanlarına dayalı kişiselleştirilmiş restoran önerileri sağlayarak kullanıcı deneyimini artırır.
 

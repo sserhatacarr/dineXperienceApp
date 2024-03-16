@@ -1,7 +1,7 @@
 
 # API Gateway Servisi
 
-[Go to English README](README.md)
+[İngilizce README'ye git](README.md)
 
 API Gateway, microservice mimarimizdeki tüm servislerin merkezi bir giriş noktasıdır. Bu servis, gelen istekleri ilgili mikroservislere yönlendirir.
 

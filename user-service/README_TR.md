@@ -1,5 +1,7 @@
 # Kullanıcı Servisi
 
+[İngilizce README'ye git](README.md)
+
 Kullanıcı Servisi, mikroservis mimarimizin önemli bir bileşenidir. Kullanıcı verilerini yönetmekten sorumludur ve kullanıcı bilgilerini oluşturma, güncelleme, silme ve almak için işlevler sağlar. Bu temel CRUD işlemlerinin yanı sıra, Kullanıcı Servisi ayrıca restoranlar için kullanıcı yorumlarını da yönetir. Her yorum, 1 ile 5 arasında bir puan içerir. Kullanıcı Servisi, kullanıcıların restoranlar hakkındaki görüşlerini ve deneyimlerini paylaşmalarına izin vererek kullanıcı deneyimini artırır.
 
 ## Restaurant Client

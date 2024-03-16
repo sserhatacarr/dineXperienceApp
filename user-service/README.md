@@ -1,5 +1,7 @@
 # User Service
 
+[Go to Turkish README](README_TR.md)
+
 The User Service is a key component in our microservice architecture. It is responsible for managing user data and provides functionalities for creating, updating, deleting, and retrieving user information. In addition to these basic CRUD operations, the User Service also manages user reviews for restaurants. Each review includes a score between 1 and 5. The User Service enhances the user experience by allowing users to share their opinions and experiences about restaurants.
 
 ## Restaurant Client

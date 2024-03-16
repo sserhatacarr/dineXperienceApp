@@ -38,6 +38,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
     private MockMvc mockMvc;
 
+    private Long  userId = 10L;
+
     @BeforeEach
     void setUp() {
         mockMvc = MockMvcBuilders.webAppContextSetup(this.context).build();
@@ -47,17 +49,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
     @Test
     void shouldGetUsers() throws Exception {
         MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/users"))
-                .andExpect(MockMvcResultMatchers.status().isOk())
-                .andReturn();
-
-        boolean success = isSuccess(mvcResult);
-        assertTrue(success);
-    }
-
-    @Test
-    void shouldGetUserById() throws Exception {
-        Long userId = 1L;
-        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/users/" + userId))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andReturn();
 
@@ -91,9 +82,19 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
     }
 
     @Test
+    void shouldGetUserById() throws Exception {
+        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/users/" + userId))
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andReturn();
+
+        boolean success = isSuccess(mvcResult);
+        assertTrue(success);
+    }
+
+    @Test
     void shouldUpdateUser() throws Exception {
         UserUpdateRequest userUpdateRequest = new UserUpdateRequest(
-                1L,
+                userId,
                 "name",
                 "surname",
                 LocalDate.now(),
@@ -105,7 +106,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
         String requestAsString = objectMapper.writeValueAsString(userUpdateRequest);
 
-        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.put("/api/v1/users/"+1L)
+        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.put("/api/v1/users/"+userId)
                         .content(requestAsString)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk())
@@ -114,7 +115,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
     @Test
     void shouldDeleteUser() throws Exception {
-        Long userId = 1L;
+
         MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.delete("/api/v1/users/" + userId))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andReturn();

@@ -30,6 +30,16 @@ eureka:
     hostname: api-gateway
     preferIpAddress: true
 
+    spring:
+      cloud:
+        gateway:
+          globalcors:
+            corsConfigurations:
+              '[/**]':
+                allowedOrigins: "*"
+                allowedHeaders: "*"
+                allowedMethods: "*"
+
 
 # Zipkin Configuration
 management:

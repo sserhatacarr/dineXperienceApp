@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Serhat Acar
  */
 @RestController
-@RequestMapping("/api/v1/recommendations")
+@RequestMapping("/api/v1/restaurants/recommendations")
 @RequiredArgsConstructor
 public class RecommendationController {
 

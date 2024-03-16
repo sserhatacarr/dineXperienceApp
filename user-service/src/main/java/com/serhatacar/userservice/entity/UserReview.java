@@ -3,6 +3,8 @@ package com.serhatacar.userservice.entity;
 import com.serhatacar.userservice.common.base.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import java.math.BigDecimal;
 
@@ -32,6 +34,7 @@ public class UserReview extends BaseEntity {
 
     @JoinColumn(name = "user_id", nullable = false)
     @ManyToOne
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
 
 

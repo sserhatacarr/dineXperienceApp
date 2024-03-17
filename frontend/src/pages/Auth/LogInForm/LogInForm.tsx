@@ -12,7 +12,25 @@ function LogInForm() {
   const handleLogIn = async (e: any) => {
     e.preventDefault();
 
-    if (
+    if (authContext) {
+      try {
+        const username = localStorage.getItem("username");
+        const password = localStorage.getItem("password");
+
+        if (
+          username === authContext.logInUserForm.username &&
+          password === authContext.logInUserForm.password
+        ) {
+          authContext.setIsLoggedIn(true);
+          localStorage.setItem("jwt", "pseudoJwt");
+          history.push("/home");
+        }
+      } catch (error) {
+        console.error("Error occurred during login:", error);
+      }
+    }
+
+    /*if (
       authContext &&
       authContext.logInUserForm.username !== "" &&
       authContext.logInUserForm.password !== ""
@@ -37,7 +55,7 @@ function LogInForm() {
       }
     } else {
       alert("Please fill in all fields");
-    }
+    }*/
   };
 
   function toggleForm() {
@@ -58,7 +76,7 @@ function LogInForm() {
   };
 
   return (
-    <div className="h-full w-fit flex justify-center mt-10 bg-[#FC2947] rounded-3xl">
+    <div className="h-full w-fit flex justify-center mt-10 bg-gradient-to-br from-purple-600 to-orange-400 rounded-3xl">
       <form className="w-full h-full" onSubmit={handleLogIn}>
         <div className="h-full w-[100%] flex flex-col justify-center rounded-3xl items-center gap-5 border px-40 shadow-xl shadow-[#FFDEB9] text-black">
           <h2 className="text-5xl">Log In</h2>

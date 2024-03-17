@@ -11,7 +11,7 @@ function Navbar() {
         </Link>
         <Link to="/profile">
           <li className="text-2xl text-center px-4 py-2 shadow-black shadow-md rounded-lg bg-gradient-to-r from-purple-600 to-purple-400  font-extrabold text-purple-200  border-2 border-transparent  hover:text-[#f4edcc] hover:bg-orange-500 hover:border-[#f4edcc] transition-colors duration-300 ease-in-out">
-            Profile
+            Users
           </li>
         </Link>
       </ul>

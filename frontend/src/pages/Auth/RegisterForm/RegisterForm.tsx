@@ -59,7 +59,7 @@ function RegisterForm() {
   };
 
   return (
-    <div className="h-full w-fit flex justify-center mt-10 bg-[#FC2947] rounded-3xl">
+    <div className="h-full w-fit flex justify-center mt-10 bg-gradient-to-br from-purple-600 to-orange-400 rounded-3xl">
       <form className="w-full h-full" onSubmit={handleRegister}>
         <div className="h-full w-[100%] flex flex-col justify-center rounded-3xl items-center gap-5 border px-40 shadow-xl shadow-[#FFDEB9] text-black">
           <h2 className="text-5xl">Create Account</h2>
@@ -77,15 +77,29 @@ function RegisterForm() {
             className="border-1 border-black rounded-md p-2 w-80 text-lg"
           />
 
-          <label htmlFor="username" className="text-2xl">
-            Username
+          <label htmlFor="name" className="text-2xl">
+            Name
           </label>
           <input
             type="text"
-            name="username"
+            name="name"
             placeholder="John"
             required={true}
-            value={authContext?.createUserForm?.username}
+            value={authContext?.createUserForm?.name}
+            onChange={onChangeRegister}
+            maxLength={40}
+            className="border-1 border-black rounded-md p-2 w-80 text-lg"
+          />
+
+          <label htmlFor="surname" className="text-2xl">
+            Surname
+          </label>
+          <input
+            type="text"
+            name="surname"
+            placeholder="John"
+            required={true}
+            value={authContext?.createUserForm?.surname}
             onChange={onChangeRegister}
             maxLength={40}
             className="border-1 border-black rounded-md p-2 w-80 text-lg"

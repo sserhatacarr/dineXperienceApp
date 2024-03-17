@@ -6,6 +6,8 @@ import com.serhatacar.userservice.exception.N11BusinessException;
 import com.serhatacar.userservice.exception.notactive.ItemNotActiveException;
 import com.serhatacar.userservice.exception.notactive.UserNotActiveException;
 import com.serhatacar.userservice.exception.notfound.UserNotFoundException;
+import com.serhatacar.userservice.service.kafka.KafkaProducerService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -19,7 +21,11 @@ import java.time.LocalDateTime;
  */
 
 @ControllerAdvice
+@RequiredArgsConstructor
 public class GlobalExceptionHandler {
+
+    private final KafkaProducerService kafkaService;
+
     @ExceptionHandler(Exception.class)
     protected ResponseEntity<Object> handleException(Exception ex, WebRequest request) {
         String message = ex.getMessage();
@@ -28,8 +34,11 @@ public class GlobalExceptionHandler {
         var generalErrorMessages = new GeneralErrorResponse(LocalDateTime.now(), message, description);
         var restResponse = RestResponse.error(generalErrorMessages, message);
 
+        kafkaService.sendMessage("errorLog", "message = " + message + " description = " + description);
+
         return ResponseEntity.badRequest().body(restResponse);
     }
+
 
     @ExceptionHandler(N11BusinessException.class)
     protected ResponseEntity<Object> handleN11BusinessException(N11BusinessException ex, WebRequest request) {

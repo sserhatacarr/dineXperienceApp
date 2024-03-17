@@ -48,6 +48,8 @@ public class GlobalExceptionHandler {
         var generalErrorMessages = new GeneralErrorResponse(LocalDateTime.now(), message, description);
         var restResponse = RestResponse.error(generalErrorMessages, message);
 
+        kafkaService.sendMessage("errorLog", "message = " + message + " description = " + description);
+
         return ResponseEntity.badRequest().body(restResponse);
     }
 
@@ -58,6 +60,8 @@ public class GlobalExceptionHandler {
 
         var generalErrorMessages = new GeneralErrorResponse(LocalDateTime.now(), message, description);
         var restResponse = RestResponse.error(generalErrorMessages, message);
+
+        kafkaService.sendMessage("errorLog", "message = " + message + " description = " + description);
 
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.FORBIDDEN);
     }
@@ -70,6 +74,8 @@ public class GlobalExceptionHandler {
         var generalErrorMessages = new GeneralErrorResponse(LocalDateTime.now(), message, description);
         var restResponse = RestResponse.error(generalErrorMessages, message);
 
+        kafkaService.sendMessage("errorLog", "message = " + message + " description = " + description);
+
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.FORBIDDEN);
     }
 
@@ -80,6 +86,8 @@ public class GlobalExceptionHandler {
 
         var generalErrorMessages = new GeneralErrorResponse(LocalDateTime.now(), message, description);
         var restResponse = RestResponse.error(generalErrorMessages, message);
+
+        kafkaService.sendMessage("errorLog", "message = " + message + " description = " + description);
 
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
     }

@@ -1,5 +1,7 @@
 # Dine Experience Frontend
 
+ [Türkçe](README_TR.md)
+
 This is the frontend for the Dine Experience application, a comprehensive project developed for the N11 TalentHub Backend Bootcamp. This frontend is designed to interact with the backend services of the application, providing a user-friendly interface for users to register, submit reviews, and receive personalized restaurant recommendations based on their location and restaurant ratings.
 
 ## Getting Started

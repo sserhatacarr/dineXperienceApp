@@ -1,8 +1,8 @@
-import React, { createContext,useState} from "react";
+import React, { createContext, useState } from "react";
 
 // TYPES START
 interface CreateUserForm {
-  username: string;
+  name: string;
   password: string;
   mail: string;
 }
@@ -40,7 +40,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const [passwordChecker, setPasswordChecker] = useState<string>("");
   const [createUserForm, setCreateUserForm] = useState<CreateUserForm>({
-    username: "",
+    name: "",
     password: "",
     mail: "",
   });
@@ -71,4 +71,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   );
 };
 
-export const AuthContext = createContext<AuthContextType | undefined>(undefined);
+export const AuthContext = createContext<AuthContextType | undefined>(
+  undefined
+);

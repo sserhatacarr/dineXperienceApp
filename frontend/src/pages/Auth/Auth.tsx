@@ -8,9 +8,9 @@ function Auth() {
   const isRegistered = authContext ? authContext.isRegistered : true;
 
   return (
-    <div className="w-[100%] h-[100%] bg-[#7149C6] flex flex-col justify-center items-center rounded-3xl ">
+    <div className="w-screen h-screen flex flex-col justify-center items-center overflow-hidden">
       {isRegistered ? <LogInForm /> : <RegisterForm />}
-      <h1 className="mb-5 mt-10 text-lg">
+      <h1 className="mb-5 mt-10 text-lg text-black">
         This project is for educational purposes only. Do not use your personal
         data!
       </h1>

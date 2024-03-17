@@ -12,6 +12,10 @@ function App() {
   const authContext = useContext(AuthContext);
 
   const jwt = authContext ? authContext.jwt : "";
+  console.log("jwt", jwt);
+
+  localStorage.setItem("username", "admin");
+  localStorage.setItem("password", "admin");
 
   return (
     <div className="w-full h-[100%]">
@@ -23,7 +27,11 @@ function App() {
                 exact
                 path="/"
                 render={() =>
-                  jwt === "" || jwt !== null ? <Redirect to="home" /> : <Auth />
+                  jwt === "" || jwt === null ? (
+                    <Auth />
+                  ) : (
+                    <Redirect to="/home" />
+                  )
                 }
               />
               <Route
@@ -65,3 +73,4 @@ export default App;
 // modals
 // Auth Redirect düzelt
 // homedaki restaurantı komponente taşı
+// dinex navbar üstüne

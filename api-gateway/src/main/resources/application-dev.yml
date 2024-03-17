@@ -7,10 +7,6 @@ eureka:
   instance:
     hostname: localhost
     preferIpAddress: true
-management:
-  zipkin:
-    tracing:
-      endpoint: http://localhost:9411
 
 spring:
   cloud:

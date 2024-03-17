@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  db:
+  postgres_db:
     image: postgres
     container_name: postgres_db
     environment:
@@ -13,7 +13,21 @@ services:
     networks:
       - back-tier
     volumes:
-      - db_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data
+
+  mongo:
+    image: mongo
+    container_name: mongo_db
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongo
+      MONGO_INITDB_ROOT_PASSWORD: 123
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - back-tier
+    ports:
+      - "27017:27017"
 
   solr:
     image: solr
@@ -21,13 +35,13 @@ services:
     ports:
       - "8983:8983"
     volumes:
-      - data:/var/solr
+      - solr_data:/var/solr
     networks:
       - back-tier
     command:
       - solr-precreate
       - restaurants
-      -
+
   zipkin:
     image: openzipkin/zipkin
     container_name: zipkin
@@ -35,7 +49,26 @@ services:
       - back-tier
     ports:
       - "9411:9411"
-      -
+
+
+  zookeeper:
+    image: wurstmeister/zookeeper
+    container_name: zookeeper
+    networks:
+      - back-tier
+    ports:
+      - "2181:2181"
+  kafka:
+    image: wurstmeister/kafka
+    container_name: kafka
+    networks:
+      - back-tier
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: localhost
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+
   discovery-server:
     build:
       context: ./discovery-server
@@ -46,7 +79,7 @@ services:
     networks:
       - back-tier
     restart: always
-    
+
   api-gateway:
     build:
       context: ./api-gateway
@@ -67,8 +100,8 @@ services:
       - "8081:8081"
     networks:
       - back-tier
-    restart: always    
-    
+    restart: always
+
   user-service:
     build:
       context: ./user-service
@@ -78,11 +111,25 @@ services:
       - "8082:8082"
     networks:
       - back-tier
-    restart: always    
-  
+    restart: always
+
+  logging-service:
+    build:
+      context: ./logging-service
+      dockerfile: Dockerfile
+    container_name: logging-service
+    ports:
+      - "8083:8083"
+    networks:
+      - back-tier
+    restart: always
+
 
 volumes:
-  db_data:
-  data:
+  postgres_data:
+  solr_data:
+  mongo_data:
+  kafka_data:
+
 networks:
   back-tier:

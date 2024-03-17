@@ -5,6 +5,7 @@ import { DataProvider } from "./context/DataContext";
 import Auth from "./pages/Auth/Auth";
 import Home from "./pages/Home/Home";
 import Profile from "./pages/Profile/Profile";
+import RestaurantDetail from "./pages/RestaurantDetail/RestaurantDetail";
 import "./App.css";
 
 function App() {
@@ -37,6 +38,17 @@ function App() {
                 path="/profile"
                 render={() =>
                   jwt !== "" || jwt !== null ? <Profile /> : <Redirect to="/" />
+                }
+              />
+              <Route
+                exact
+                path={`/restaurant/:id`}
+                render={() =>
+                  jwt !== "" || jwt !== null ? (
+                    <RestaurantDetail />
+                  ) : (
+                    <Redirect to="/" />
+                  )
                 }
               />
             </DataProvider>

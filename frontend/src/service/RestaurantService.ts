@@ -50,7 +50,7 @@ interface data {
             latitude: number;
             longitude: number;
         };
-        restaurantList: RestaurantRecommendation[];
+    restaurantList: RestaurantRecommendation[];
 }
 
 interface FetchRestaurantByIdResponse {

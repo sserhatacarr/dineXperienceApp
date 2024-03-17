@@ -89,3 +89,34 @@ The `UserReviewDetailDTO` object represents a user review and contains the follo
 
 Unit and integration tests are provided for the User Service. These tests ensure that the service functions as expected when interacting with the database and handling HTTP requests.
 
+## Contact
+
+### Serhat Acar
+
+<a href="https://github.com/sserhatacarr" target="_blank">
+<img  src=https://img.shields.io/badge/github-%2324292e.svg?&style=for-the-badge&logo=github&logoColor=white alt=github style="margin-bottom: 20px;" />
+</a>
+<a href = "mailto:sserhatacarr@outlook.com?subject = Feedback&body = Message">
+<img src=https://img.shields.io/badge/send-email-email?&style=for-the-badge&logo=microsoftoutlook&color=CD5C5C alt=gmail style="margin-bottom: 20px; margin-left:20px" />
+</a>
+<a href="https://linkedin.com/in/sserhatacarr" target="_blank">
+<img src=https://img.shields.io/badge/linkedin-%231E77B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white alt=linkedin style="margin-bottom: 20px; margin-left:20px" />
+</a>  
+
+## Talenthub Bootcamp - N11 & Patika
+
+<div align="center">
+  <a href="https://www.n11.com/">
+    <img src="../img/n11-logo.png" alt="Logo" width="220" height="140">
+  </a>
+
+<h3 align="center">Company: N11.com</h3>
+</div>
+
+<div align="center">
+  <a href="https://www.patika.dev/">
+    <img src="../img/patika-logo.png" alt="Logo" width="350" height="300">
+  </a>
+<h3 align="center">Organizer: Patika.dev</h3>   
+</div>
+

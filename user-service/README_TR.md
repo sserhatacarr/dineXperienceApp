@@ -87,3 +87,34 @@ Bu endpointlerden gelen yanıtlar, bir `RestResponse` nesnesi içinde sarılır.
 ## Testler
 
 Kullanıcı Servisi için birim ve entegrasyon testleri sağlanmıştır. Bu testler, servisin veritabanı ile etkileşimde bulunurken ve HTTP isteklerini işlerken beklendiği gibi işlev gördüğünü garanti eder.
+
+## İletişim
+
+### Serhat Acar
+
+<a href="https://github.com/sserhatacarr" target="_blank">
+<img  src=https://img.shields.io/badge/github-%2324292e.svg?&style=for-the-badge&logo=github&logoColor=white alt=github style="margin-bottom: 20px;" />
+</a>
+<a href = "mailto:sserhatacarr@gmail.com?subject = Geri Bildirim&body = Mesaj">
+<img src=https://img.shields.io/badge/send-email-email?&style=for-the-badge&logo=microsoftoutlook&color=CD5C5C alt=gmail style="margin-bottom: 20px; margin-left:20px" />
+</a>
+<a href="https://linkedin.com/in/sserhatacarr" target="_blank">
+<img src=https://img.shields.io/badge/linkedin-%231E77B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white alt=linkedin style="margin-bottom: 20px; margin-left:20px" />
+</a>  
+
+## Talenthub Bootcamp - N11 & Patika
+
+<div align="center">
+  <a href="https://www.n11.com/">
+    <img src="../img/n11-logo.png" alt="Logo" width="220" height="140">
+  </a>
+
+<h3 align="center">Şirket: N11.com</h3>
+</div>
+
+<div align="center">
+  <a href="https://www.patika.dev/">
+    <img src="../img/patika-logo.png" alt="Logo" width="350" height="300">
+  </a>
+<h3 align="center">Organizatör: Patika.dev</h3>   
+</div>

@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: 123
       POSTGRES_DB: user_service_db
     ports:
-      - 5432:5432
+      - "5432:5432"
     networks:
       - back-tier
     volumes:
@@ -27,14 +27,15 @@ services:
     command:
       - solr-precreate
       - restaurants
-
+      -
   zipkin:
     image: openzipkin/zipkin
     container_name: zipkin
     networks:
       - back-tier
     ports:
-      - 9411:9411
+      - "9411:9411"
+      -
   discovery-server:
     build:
       context: ./discovery-server

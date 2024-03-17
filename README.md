@@ -2,8 +2,11 @@
 
 [Go to Turkish README](README_TR.md)
 
-The Dine Experience Application is a comprehensive project developed as the final assignment for the N11 TalentHub Backend Bootcamp. This application is built using a microservices architecture and consists of four main modules: `discovery-server`, `api-gateway`, `user-service`, and `restaurant-service`. The `discovery-server` acts as a service registry, enabling efficient communication between the microservices. The `api-gateway` serves as the single entry point for all client requests and forwards them to the appropriate service. The `user-service` manages users and their reviews for restaurants, providing functionalities such as user registration, review submission, and personalized restaurant recommendations based on user location and restaurant ratings. The `restaurant-service` handles all operations related to restaurants, including restaurant registration and listing, with all restaurant data stored and queried in Apache Solr.  Each service in this repository has its own README.md file that provides details about the project.
+## Project Architecture and System Design
 
+[![Dine Experience Application Architecture](./img/n11_talenthub_final_project_design.png)](./img/n11_talenthub_final_project_design.png)
+
+The Dine Experience Application is a comprehensive project developed for the N11 TalentHub Backend Bootcamp. This application is built using a microservices architecture and consists of five main modules: discovery-server, api-gateway, user-service, restaurant-service, and logging-service. The Discovery Server serves as a service registry that enables effective communication between microservices. The API Gateway serves as the single entry point for all client requests and forwards them to the appropriate service. The User Service manages users and their reviews for restaurants, providing functions such as user registration, posting reviews, and personalized restaurant recommendations based on user location and restaurant ratings. The Restaurant Service manages all operations related to restaurants, including restaurant registration and listing, and stores all restaurant data in Apache Solr. The Logging Service is a logging service for a Spring Boot application. It uses Apache Kafka for message consumption and MongoDB for data storage. The service is designed to consume error logs from Kafka, store them in MongoDB, and provide an API for retrieving the logs. Each service in this repository has its own README.md file, providing detailed information about the project.
 
 ## Services
 
@@ -15,4 +18,4 @@ The Dine Experience Application is a comprehensive project developed as the fina
 
 - [Restaurant Service](./restaurant-service/README.md): A Spring Boot application that provides a RESTful API for managing restaurants. It includes operations for creating, retrieving, updating, and deleting restaurants. Each restaurant has associated latitude and longitude values. The data for the restaurants is stored in Apache Solr and queries are also made to Solr. The service also provides an API for recommending restaurants to users based on their location and the restaurant's score.
 
-
+- [Logging Service](./logging-service/README.md): This is a logging service for a Spring Boot application. It uses Apache Kafka for message consumption and MongoDB for data storage. The service is designed to consume error logs from Kafka, store them in MongoDB, and provide an API for retrieving the logs.

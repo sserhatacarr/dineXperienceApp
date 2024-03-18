@@ -29,33 +29,6 @@ function LogInForm() {
         console.error("Error occurred during login:", error);
       }
     }
-
-    /*if (
-      authContext &&
-      authContext.logInUserForm.username !== "" &&
-      authContext.logInUserForm.password !== ""
-    ) {
-      try {
-        // Call SendRequest directly here
-        await SendRequest({
-          actionType: "signIn",
-          createUserForm: authContext.createUserForm,
-          setCreateUserForm: authContext.setCreateUserForm,
-          setIsRegistered: authContext.setIsRegistered,
-          isRegistered: authContext.isRegistered,
-          logInUserForm: authContext.logInUserForm,
-          setUserId: authContext.setUserId,
-          setIsLoggedIn: authContext.setIsLoggedIn,
-          setJwt: authContext.setJwt,
-          history: history,
-        });
-      } catch (error) {
-        console.error("Error occurred during login:", error);
-        // Handle error, perhaps show an error message to the user
-      }
-    } else {
-      alert("Please fill in all fields");
-    }*/
   };
 
   function toggleForm() {
@@ -88,7 +61,7 @@ function LogInForm() {
             name="username"
             placeholder="John"
             required={true}
-            value={authContext?.logInUserForm?.username} // Add null check for authContext
+            value={authContext?.logInUserForm?.username} 
             onChange={onChangeLogIn}
             maxLength={40}
             className="border-1 border-black rounded-md p-2 w-80 text-lg"

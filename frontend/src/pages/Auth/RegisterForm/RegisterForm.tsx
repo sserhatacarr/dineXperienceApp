@@ -15,7 +15,7 @@ function RegisterForm() {
       authContext.logInUserForm.password !== ""
     ) {
       try {
-        // Call SendRequest directly here
+        
         await SendRequest({
           actionType: "signIn",
           createUserForm: authContext.createUserForm,
@@ -30,7 +30,6 @@ function RegisterForm() {
         });
       } catch (error) {
         console.error("Error occurred during login:", error);
-        // Handle error, perhaps show an error message to the user
       }
     } else {
       alert("Please fill in all fields");

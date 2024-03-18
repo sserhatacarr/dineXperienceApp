@@ -11,8 +11,6 @@ function Auth() {
     <div className="w-screen h-screen flex flex-col justify-center items-center overflow-hidden">
       {isRegistered ? <LogInForm /> : <RegisterForm />}
       <h1 className="mb-5 mt-10 text-lg text-black">
-        This project is for educational purposes only. Do not use your personal
-        data!
       </h1>
     </div>
   );

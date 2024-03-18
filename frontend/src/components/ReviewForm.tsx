@@ -35,28 +35,7 @@ const ReviewForm = ({ restaurantId }: { restaurantId: any }) => {
     <div className="max-w-md mx-auto bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 p-6 rounded-lg shadow-lg">
       <Formik
         initialValues={{
-          /*{
-  "restaurantId": "1",
-  "comment": "string",
-  "userRate": 1,
-  "user": {
-    "baseAdditionalFields": {
-      "createdAt": "2024-03-17T14:56:00.925Z",
-      "updatedAt": "2024-03-17T14:56:00.925Z",
-      "creatorId": 0,
-      "updatedId": 0
-    },
-    "id": 1,
-    "name": "string",
-    "surname": "string",
-    "birthDate": "2024-03-17",
-    "email": "string",
-    "gender": "MALE",
-    "userStatus": "ACTIVE",
-    "latitude": 0,
-    "longitude": 0
-  }
-} */
+        
           restaurantId: restaurantId,
           comment: "",
           userRate: 0,
@@ -67,7 +46,7 @@ const ReviewForm = ({ restaurantId }: { restaurantId: any }) => {
               creatorId: 0,
               updatedId: 0,
             },
-            id: "", // User ID alanını boş string olarak başlatıyoruz
+            id: "", 
             name: "s",
             surname: "s",
             birthDate: "2021-01-01",

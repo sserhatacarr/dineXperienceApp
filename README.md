@@ -4,6 +4,8 @@
 
 [Go to Screenshots Pdf](./dineXperienceApp.pdf )
 
+[Go to Project Presentation Video](https://www.loom.com/share/be7bf4e9b7504d2284f37f74a581f0fd)
+
 ## Project Architecture and System Design
 
 [![Dine Experience Application Architecture](./img/n11_talenthub_final_project_design.png)](./img/n11_talenthub_final_project_design.png)
